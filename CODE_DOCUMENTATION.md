@@ -70,7 +70,7 @@ The design is structured into distinct, loosely-coupled layers:
 - **`animations/ProjectDiagram/ProjectDiagram.js`**: Visual step-by-step pipeline diagrams for project architectures.
 - **`common/`**: Atomic components (`Badge`, `Button`, `Card`, `IconTile`, `SectionHeading`, `Tag`) with consistent prop validation and named exports.
 - **`layout/`**: Global shell components (`NavBar`, `Footer`) with active section tracking, theme switcher, and verified contact chips.
-- **`ui/Modal/CvModal.js`**: Accessible React-Bootstrap modal rendering a printable, structured curriculum vitae with direct PDF download and browser print triggers.
+- **`ui/Modal/CvModal.js`**: Accessible React-Bootstrap modal rendering an embedded official PDF document preview with direct PDF download, print, and open-in-tab actions.
 
 ### `src/services/`
 - **`contactService.js`**: Async contact submission handler with RFC 5322 email regex validation, message length sanitization, simulated network transport latency, and structured responses.

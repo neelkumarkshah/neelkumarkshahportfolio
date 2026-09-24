@@ -8,7 +8,7 @@
 	border-radius: var(--radius-lg) !important;
 	color: var(--color-text) !important;
 	box-shadow: var(--shadow-lg) !important;
-	max-height: 92vh;
+	max-height: 94vh;
 	display: flex;
 	flex-direction: column;
 	backdrop-filter: blur(1rem);
@@ -18,14 +18,14 @@
 	border-bottom: 0.0625rem solid var(--color-border-hairline) !important;
 	padding: var(--space-md) var(--space-lg) !important;
 	display: flex !important;
-	align-items: flex-start !important;
+	align-items: center !important;
 	justify-content: space-between !important;
 	gap: var(--space-md);
 }
 
 .headerInfo {
 	display: flex;
-	flex-direction: column;
+	align-items: center;
 	gap: 0.75rem;
 	flex: 1;
 }
@@ -33,7 +33,7 @@
 .headerTop {
 	display: flex;
 	align-items: center;
-	gap: 0.75rem;
+	gap: 0.625rem;
 	flex-wrap: wrap;
 }
 
@@ -53,50 +53,6 @@
 	border: 0.0625rem solid var(--color-border-hairline);
 	border-radius: var(--radius-xs);
 	color: var(--color-accent-blue);
-}
-
-.tabGroup {
-	display: inline-flex;
-	align-items: center;
-	background: var(--color-surface-2);
-	border: 0.0625rem solid var(--color-border-hairline);
-	border-radius: var(--radius-sm);
-	padding: 0.1875rem;
-	gap: 0.25rem;
-	width: fit-content;
-}
-
-.tabBtn {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.375rem;
-	padding: 0.3125rem 0.75rem;
-	border: none;
-	border-radius: var(--radius-xs);
-	background: transparent;
-	color: var(--color-text-muted);
-	font-family: var(--font-sans);
-	font-size: var(--fs-label-mono);
-	font-weight: 500;
-	cursor: pointer;
-	transition: all var(--transition-fast);
-}
-
-.tabBtn:hover {
-	color: var(--color-text);
-	background: var(--color-surface-3);
-}
-
-.tabBtnActive {
-	background: var(--color-accent-blue) !important;
-	color: var(--color-on-accent) !important;
-	font-weight: 600;
-	box-shadow: var(--shadow-sm);
-}
-
-.tabBtn .material-symbols-outlined {
-	font-size: 1.125rem;
-	line-height: 1;
 }
 
 .closeBtn {
@@ -129,23 +85,23 @@
 }
 
 .modalBody {
-	overflow-y: auto;
-	padding: var(--space-lg) !important;
+	overflow: hidden;
+	padding: var(--space-md) !important;
 	display: flex;
 	flex-direction: column;
-	min-height: 60vh;
+	height: 75vh;
+	min-height: 32rem;
 }
 
 /* PDF Embed Container */
 .pdfContainer {
 	width: 100%;
-	height: 72vh;
-	min-height: 31.25rem;
+	height: 100%;
 	display: flex;
 	flex-direction: column;
 	border-radius: var(--radius-md);
 	overflow: hidden;
-	background: #1e293b;
+	background: #0f172a;
 	border: 0.0625rem solid var(--color-border-hairline);
 }
 
@@ -182,425 +138,6 @@
 	margin-top: var(--space-sm);
 }
 
-/* Structured Digital CV */
-.structuredCv {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-lg);
-	background: var(--color-surface-1);
-	padding: var(--space-xl);
-	border-radius: var(--radius-md);
-	border: 0.0625rem solid var(--color-border-hairline);
-}
-
-.resumeHeader {
-	text-align: center;
-	border-bottom: 0.0625rem solid var(--color-border-hairline);
-	padding-bottom: var(--space-md);
-}
-
-.candidateName {
-	font-family: var(--font-heading);
-	font-size: var(--fs-headline-md);
-	font-weight: 700;
-	color: var(--color-text);
-	margin-bottom: 0.25rem;
-}
-
-.candidateRole {
-	font-family: var(--font-mono);
-	font-size: var(--fs-body-sm);
-	color: var(--color-accent-blue);
-	margin-bottom: 0.75rem;
-}
-
-.contactMeta {
-	display: flex;
-	justify-content: center;
-	align-items: center;
-	flex-wrap: wrap;
-	gap: 0.75rem;
-	font-size: var(--fs-label-mono);
-	color: var(--color-text-muted);
-}
-
-.contactMeta span {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.25rem;
-}
-
-.contactMeta span .material-symbols-outlined {
-	font-size: 0.9375rem;
-	color: var(--color-tertiary);
-}
-
-.contactMeta a {
-	color: var(--color-text-muted);
-	text-decoration: none;
-	transition: color var(--transition-fast);
-}
-
-.contactMeta a:hover {
-	color: var(--color-accent-blue);
-	text-decoration: underline;
-}
-
-.sectionBlock {
-	display: flex;
-	flex-direction: column;
-	gap: 0.625rem;
-}
-
-.sectionHeading {
-	font-family: var(--font-heading);
-	font-size: var(--fs-label-mono);
-	font-weight: 700;
-	color: var(--color-tertiary);
-	letter-spacing: 0.05em;
-	border-bottom: 0.0625rem solid var(--color-border-hairline);
-	padding-bottom: 0.375rem;
-	margin: 0;
-}
-
-.sectionBody {
-	font-size: var(--fs-body-sm);
-	line-height: var(--lh-body-sm);
-	color: var(--color-text);
-	margin: 0;
-}
-
-.skillList {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.skillItem {
-	font-size: var(--fs-body-sm);
-	line-height: var(--lh-body-sm);
-}
-
-.skillCategoryTitle {
-	color: var(--color-text);
-}
-
-.skillTagsText {
-	color: var(--color-text-muted);
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-mono);
-}
-
-/* Experience styling */
-.expItem {
-	display: flex;
-	flex-direction: column;
-	gap: 0.375rem;
-	padding: var(--space-sm) 0;
-	border-bottom: 0.0625rem dashed var(--color-border-hairline);
-}
-
-.expItem:last-child {
-	border-bottom: none;
-}
-
-.expHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-}
-
-.expRoleRow {
-	display: flex;
-	align-items: baseline;
-	flex-wrap: wrap;
-	gap: 0.25rem;
-}
-
-.expRole {
-	font-family: var(--font-heading);
-	font-weight: 700;
-	font-size: var(--fs-body-md);
-	color: var(--color-text);
-}
-
-.expOrg {
-	font-family: var(--font-sans);
-	font-size: var(--fs-body-sm);
-	color: var(--color-accent-blue);
-	font-weight: 500;
-}
-
-.expPeriod {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-text-faint);
-}
-
-.expLocation {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.25rem;
-	font-size: var(--fs-label-xs);
-	color: var(--color-text-faint);
-}
-
-.expLocation .material-symbols-outlined {
-	font-size: 0.875rem;
-}
-
-.expBullets {
-	margin: 0.25rem 0 0;
-	padding-left: 1.25rem;
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-	font-size: var(--fs-body-sm);
-	line-height: var(--lh-body-sm);
-	color: var(--color-text-muted);
-}
-
-/* Project styling */
-.projectList {
-	display: flex;
-	flex-direction: column;
-	gap: var(--space-md);
-}
-
-.projectItem {
-	background: var(--color-surface-2);
-	border: 0.0625rem solid var(--color-border-hairline);
-	border-radius: var(--radius-sm);
-	padding: var(--space-md);
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.projectHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-}
-
-.projectTitle {
-	font-family: var(--font-heading);
-	font-weight: 700;
-	font-size: var(--fs-body-md);
-	color: var(--color-text);
-}
-
-.projectRef {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-secondary);
-}
-
-.projectDesc {
-	font-size: var(--fs-body-sm);
-	line-height: var(--lh-body-sm);
-	color: var(--color-text-muted);
-	margin: 0;
-}
-
-.itemTags {
-	display: flex;
-	flex-wrap: wrap;
-	gap: 0.375rem;
-}
-
-.miniTag {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	padding: 0.125rem 0.375rem;
-	background: var(--color-surface-3);
-	border-radius: var(--radius-xs);
-	color: var(--color-text-faint);
-}
-
-.submodulesBlock {
-	margin-top: 0.5rem;
-	padding-top: 0.5rem;
-	border-top: 0.0625rem dashed var(--color-border-hairline);
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.submoduleItem {
-	padding-left: 0.75rem;
-	border-left: 0.125rem solid var(--color-tertiary);
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-}
-
-.submoduleHeader {
-	display: flex;
-	align-items: baseline;
-	gap: 0.5rem;
-	font-size: var(--fs-body-sm);
-	color: var(--color-text);
-}
-
-.submoduleRef {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-tertiary);
-}
-
-.submoduleDesc {
-	font-size: var(--fs-label-mono);
-	color: var(--color-text-muted);
-	margin: 0;
-}
-
-/* Publications styling */
-.pubList {
-	display: flex;
-	flex-direction: column;
-	gap: 0.625rem;
-}
-
-.pubItem {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 0.0625rem dashed var(--color-border-hairline);
-}
-
-.pubItem:last-child {
-	border-bottom: none;
-}
-
-.pubHeader {
-	display: flex;
-	align-items: baseline;
-	gap: 0.5rem;
-}
-
-.pubIndex {
-	font-family: var(--font-mono);
-	font-weight: 700;
-	color: var(--color-accent-blue);
-	font-size: var(--fs-label-mono);
-}
-
-.pubTitleLink {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.25rem;
-	color: var(--color-text);
-	text-decoration: none;
-	font-size: var(--fs-body-sm);
-	transition: color var(--transition-fast);
-}
-
-.pubTitleLink:hover {
-	color: var(--color-accent-blue);
-	text-decoration: underline;
-}
-
-.pubTitleLink .material-symbols-outlined {
-	font-size: 0.875rem;
-}
-
-.pubVenue {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-text-muted);
-	padding-left: 1.25rem;
-}
-
-/* Education styling */
-.eduList {
-	display: flex;
-	flex-direction: column;
-	gap: 0.75rem;
-}
-
-.eduItem {
-	display: flex;
-	flex-direction: column;
-	gap: 0.25rem;
-	padding-bottom: 0.5rem;
-	border-bottom: 0.0625rem dashed var(--color-border-hairline);
-}
-
-.eduItem:last-child {
-	border-bottom: none;
-}
-
-.eduHeader {
-	display: flex;
-	justify-content: space-between;
-	align-items: baseline;
-	flex-wrap: wrap;
-	gap: 0.5rem;
-}
-
-.eduDegree {
-	font-family: var(--font-heading);
-	font-weight: 700;
-	font-size: var(--fs-body-md);
-	color: var(--color-text);
-}
-
-.eduPeriod {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-text-faint);
-}
-
-.eduInst {
-	font-size: var(--fs-body-sm);
-	color: var(--color-accent-blue);
-}
-
-.eduStatus {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-secondary);
-}
-
-.eduThesis {
-	font-size: var(--fs-body-sm);
-	color: var(--color-text-muted);
-	font-style: italic;
-}
-
-/* Certifications styling */
-.certList {
-	display: flex;
-	flex-direction: column;
-	gap: 0.5rem;
-}
-
-.certItem {
-	display: flex;
-	align-items: center;
-	gap: 0.5rem;
-	font-size: var(--fs-body-sm);
-	color: var(--color-text);
-}
-
-.certItem .material-symbols-outlined {
-	font-size: 1.125rem;
-	color: var(--color-secondary);
-	flex-shrink: 0;
-}
-
-.certType {
-	font-family: var(--font-mono);
-	font-size: var(--fs-label-xs);
-	color: var(--color-text-faint);
-}
-
 /* Footer styling */
 .modalFooter {
 	border-top: 0.0625rem solid var(--color-border-hairline) !important;
@@ -611,7 +148,7 @@
 	align-items: stretch;
 }
 
-@media (min-width: 48rem) {
+@media (min-width: 40rem) {
 	.modalFooter {
 		flex-direction: row;
 		justify-content: space-between;
@@ -680,30 +217,4 @@
 	border-color: var(--color-accent-blue-hover);
 	box-shadow: var(--glow-blue);
 	transform: translateY(-0.0625rem);
-}
-
-@media print {
-	.modalDialog {
-		position: static;
-		width: 100% !important;
-		max-width: 100% !important;
-	}
-	.modalContent {
-		border: none !important;
-		box-shadow: none !important;
-		background: white !important;
-		color: black !important;
-	}
-	.modalHeader, .modalFooter, .tabGroup, .closeBtn {
-		display: none !important;
-	}
-	.structuredCv {
-		background: white !important;
-		border: none !important;
-		color: black !important;
-		padding: 0 !important;
-	}
-	.candidateName, .candidateRole, .sectionHeading, .expRole, .projectTitle, .eduDegree {
-		color: black !important;
-	}
 }
