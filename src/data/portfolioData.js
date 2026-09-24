@@ -2,7 +2,7 @@ import { SECTION_IDS, anchorHref } from "constants/routes";
 
 const site = Object.freeze({
 	name: "Neelkumar K. Shah",
-	role: "Blockchain Engineer & Full Stack MERN Developer",
+	role: "Blockchain Engineer, Cybersecurity Researcher & Full Stack MERN Developer",
 	brand: "Neelkumar K. Shah",
 	tagline:
 		"An engineer with 5 years of experience across blockchain development, full-stack engineering, and cybersecurity. Built and hardened Hyperledger Fabric and Ethereum systems for India's National Blockchain Service initiative under the Ministry of Electronics and Information Technology (MeitY). Developed a full-stack security assessment platform (React, Node.js, Express.js, MongoDB) and an automated database vulnerability scanner. Authored 5 peer-reviewed IEEE publications on blockchain security.",
