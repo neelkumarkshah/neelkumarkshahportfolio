@@ -1,17 +1,18 @@
-# Neelkumar K. Shah — Production-Grade Portfolio Website
+# Neelkumar K. Shah - Engineering Portfolio Website
 
-A high-performance, production-grade personal engineering portfolio website for **Neelkumar K. Shah** (Blockchain Security Engineer, Cybersecurity Researcher, and Full Stack MERN Developer). 
+A high-performance, production-grade personal engineering portfolio website for **Neelkumar K. Shah** (Blockchain Engineer, Cybersecurity Researcher, and Full Stack MERN Developer). 
 
-Built with React 18, pure ECMAScript (`.js` only, zero `.jsx`/`.tsx`), React-Bootstrap responsive layout primitives, custom design tokens, dual light/dark themes, interactive tri-domain architecture visualizations, and an authoritative curriculum vitae integration.
+Built with React 18, pure ECMAScript (`.js` only, zero `.jsx`/`.tsx`), React-Bootstrap responsive layout primitives, custom CSS Modules and design tokens, dual light/dark themes, interactive tri-domain architecture visualizations, an interactive CLI terminal shell, and an authentic curriculum vitae integration.
 
 ---
 
 ## 1. Project Overview
 
 This website serves as the interactive engineering portfolio and research index for Neelkumar K. Shah. It communicates a unified technical identity across three interconnected engineering disciplines:
-1. **Blockchain / Web3**: Architecture, deployment, and security of enterprise permissioned ledgers (Hyperledger Fabric, Hyperledger Sawtooth) and public smart contract networks (Ethereum, Solidity).
-2. **Cybersecurity & Auditing**: Threat modeling, vulnerability assessment, penetration testing (VAPT), static code analysis, and automated database vulnerability scanning (author of **NBFDBAudit** detecting 18+ NoSQL vulnerabilities).
-3. **Full Stack MERN Engineering**: Scalable, authenticated microservices and dashboards built with MongoDB, Express.js, React.js, and Node.js (lead developer for the **Blockchain Security Assessment Portal (BSAP)** under MeitY).
+
+1. **Blockchain & Web3**: Architecture, deployment, and security of enterprise permissioned ledgers (Hyperledger Fabric, Hyperledger Sawtooth) and public smart contract networks (Ethereum, Solidity, Truffle, Ganache, IPFS).
+2. **Cybersecurity & Auditing**: Threat modeling, vulnerability assessment, penetration testing (VAPT), static source code analysis, and automated database vulnerability scanning (author of **NBFDBAudit** detecting 18+ NoSQL vulnerabilities).
+3. **Full Stack MERN Engineering**: Scalable, authenticated microservices and dashboards built with MongoDB, Express.js, React.js, Node.js, and NestJS (lead developer for the **Blockchain Security Assessment Portal (BSAP)** under MeitY).
 
 ---
 
@@ -19,7 +20,7 @@ This website serves as the interactive engineering portfolio and research index 
 
 - **Frontend Core**: React 18.3.1 (Functional components, custom hooks, `React.lazy`, `Suspense`)
 - **Language**: Modern ECMAScript (ES2022+), JavaScript exclusively (`.js` files only)
-- **Responsive Grid & Primitives**: `react-bootstrap` (v2.10.10) & `bootstrap` (v5.3.8)
+- **Responsive Grid & UI Primitives**: `react-bootstrap` (v2.10.10) & `bootstrap` (v5.3.8)
 - **Styling Architecture**: CSS Modules + Global Design Tokens (`tokens.css`) with strict `rem` font sizes
 - **Typography**:
   - Headings: `Space Grotesk` (700 for Hero, 600 for Sections)
@@ -34,12 +35,13 @@ This website serves as the interactive engineering portfolio and research index 
 ## 3. Key Features
 
 - **Interactive Engineering Network Canvas**: Custom HTML5 Canvas / SVG interactive visual simulating real-time data packets traversing Blockchain nodes, Cybersecurity shields, and MERN services.
-- **MERN Ecosystem Flow**: Interactive multi-tier diagram detailing how React, Express, Node.js, and MongoDB interconnect in production security portals.
-- **Cryptographic Career Ledger**: Reverse-chronological career timeline linking positions at Rashtriya Raksha University and C-DAC (MeitY) via deterministic SHA-style block hashes (`useHashChain`).
+- **Interactive MERN Ecosystem Flow**: Multi-tier architecture explorer detailing how React.js, Express.js, Node.js, and MongoDB/CouchDB interconnect in production security portals.
+- **Cryptographic Career Ledger**: Reverse-chronological career timeline linking positions at Rashtriya Raksha University, C-DAC (MeitY), and Huptech Web via deterministic SHA-style block hashes (`useHashChain`).
 - **5 Peer-Reviewed IEEE Publications**: Complete research index with direct links to IEEE Xplore digital library publications across IEEE ICBDS and I2CT conferences.
 - **Dual Light & Dark Themes**: Context-driven theme system with system preference detection and `localStorage` persistence.
-- **Full-Stack Contact Form & Terminal**: Dual-mode communication interface featuring an async-validated contact form and an interactive CLI terminal shell with async `ping` network simulation.
-- **Direct CV Download & Interactive Preview**: Downloadable authentic resume PDF (`Neelkumar_Shah_CV.pdf`) and an in-browser printable modal viewer.
+- **Interactive CLI Terminal**: Interactive shell emulator supporting command execution (`help`, `about`, `skills`, `experience`, `projects`, `publications`, `education`, `certifications`, `contact`, `cv`, `whoami`, `ping`, `theme`, `clear`), command history recall (`ArrowUp` / `ArrowDown`), and async ping network simulation.
+- **REST API Payload Viewer**: Visual JSON representation of the engineer's profile (`GET /api/v1/engineer/neelkumar-k-shah`).
+- **Direct CV Download & Interactive Preview**: Downloadable authentic resume PDF and an in-browser printable modal viewer (`CvModal`).
 
 ---
 
@@ -103,7 +105,7 @@ src/
 │
 ├── components/                        # Reusable Atomic UI & Layout
 │   ├── animations/                    # Specialized interactive diagrams & canvas
-│   │   ├── EngineeringNetwork/        # Tri-domain animated network mesh
+│   │   ├── EngineeringNetwork/        # Tri-domain animated network mesh canvas
 │   │   ├── MernArchitecture/          # Interactive MERN multi-tier pipeline
 │   │   ├── ProjectDiagram/            # Step-by-step system architecture flow
 │   │   └── index.js
@@ -118,7 +120,6 @@ src/
 │   ├── layout/                        # Global shell components
 │   │   ├── Footer/                    # Verified footer & social citations
 │   │   ├── NavBar/                    # Responsive navbar with theme toggle
-│   │   ├── ScrollProgressBar/         # rAF-throttled scroll progress
 │   │   └── index.js
 │   └── ui/
 │       ├── Modal/CvModal.js           # Interactive CV preview & print dialog
@@ -130,20 +131,18 @@ src/
 │   ├── about/About.js                 # Professional narrative & philosophy
 │   ├── experience/Experience.js       # Ledger chain career timeline
 │   ├── skills/Skills.js               # Categorized skills & interactive filters
-│   ├── projects/Projects.js           # Featured projects with system diagrams
-│   ├── publications/Publications.js   # 5 IEEE research publications
+│   ├── projects/Projects.js           # Featured projects (NBF, NBFDBAudit, BSAP, E-Waste DApp)
+│   ├── publications/Publications.js   # 5 IEEE research publications with Xplore links
 │   ├── education/Education.js         # GTU & MEF degree credentials
-│   ├── certifications/Certifications.js # Professional security accreditations
-│   ├── contact/Contact.js             # Dual-mode form & CLI terminal
-│   ├── contact/ContactForm.js         # Controlled contact form with validation
+│   ├── certifications/Certifications.js # Professional security accreditations (CBSP, C-DAC, NIELIT)
+│   ├── contact/Contact.js             # Dual-column REST API card & CLI terminal
 │   ├── contact/Terminal.js            # Interactive shell emulator
 │   └── resume/ResumeSection.js        # CV download CTA banner
 │
 ├── hooks/                             # Custom React Hooks
 │   ├── useHashChain.js                # O(n) memoized ledger hash chain
 │   ├── useReveal.js                   # IntersectionObserver scroll reveal
-│   ├── useScrollProgress.js           # rAF-throttled scroll tracking
-│   ├── useTerminal.js                 # CLI command processor with async ping
+│   ├── useTerminal.js                 # CLI command processor with async ping & history
 │   ├── useTheme.js                    # Theme consumption hook
 │   └── index.js
 │
@@ -153,22 +152,22 @@ src/
 │   └── index.js
 │
 ├── utils/                             # Pure Utility Functions
-│   ├── hash.js                        # Deterministic string pseudo-hash
+│   ├── hash.js                        # Deterministic string pseudo-hash (strHash, truncHash)
 │   ├── sleep.js                       # Promise-based async delay helper
 │   ├── storage.js                     # Safe localStorage wrapper
 │   └── index.js
 │
 ├── constants/                         # Application Constants
-│   ├── routes.js                      # Section ID anchors
+│   ├── routes.js                      # Section ID anchors & helper
 │   ├── theme.js                       # Theme keys & storage tokens
 │   └── index.js
 │
 ├── config/                            # Global Configuration
-│   ├── siteConfig.js                  # Metadata, OpenGraph, and asset paths
+│   ├── siteConfig.js                  # Metadata and asset configurations
 │   └── index.js
 │
 ├── data/                              # Single Source of Truth
-│   └── portfolioData.js               # 100% authentic CV data
+│   └── portfolioData.js               # 100% authentic CV & profile data
 │
 ├── styles/                            # Design Tokens & Global CSS
 │   ├── tokens.css                     # Custom properties for dark & light themes
@@ -183,22 +182,23 @@ src/
 
 ## 8. CV Placement & Management
 
-The authoritative CV file is hosted as a static asset in:
-- `public/assets/Neelkumar_Shah_CV.pdf`
+The authentic CV files are placed in the static asset directory:
+- `public/assets/Neelkumar_K_Shah_CV.pdf`
+- `public/assets/Neelkumar_K_Shah.pdf`
 
-When clicking **Download CV** from any location on the site (Navbar, Hero, Resume Banner, Footer, or Terminal command `cv`), the `resumeService.js` downloads this authentic file with the filename `Neelkumar_Shah_CV.pdf`.
+When clicking **Download CV** or **Download PDF CV** from any location on the site (Navbar, Resume Banner, Modal, or Terminal command `cv`), `resumeService.js` initiates the browser download with fallback to opening in a new tab.
 
-To update the CV in the future:
-1. Place the updated PDF in `public/assets/Neelkumar_Shah_CV.pdf`.
-2. Update corresponding data entries in `src/data/portfolioData.js`.
+To update the CV:
+1. Replace the file in `public/assets/`.
+2. Update corresponding metadata entries in `src/data/portfolioData.js` and `src/config/siteConfig.js`.
 
 ---
 
 ## 9. Theme Architecture (Light & Dark Mode)
 
 The website implements an accessible dual-theme system:
-- **Dark Mode (Default)**: Deep charcoal background (`#090d16`), cyber blue highlights (`#3b82f6`), emerald security accents (`#10b981`), and terminal dark surfaces.
-- **Light Mode**: Crisp off-white surfaces (`#f8fafc`), cobalt blue accents (`#2563eb`), slate borders, and high contrast typography.
+- **Dark Mode (Default)**: Deep canvas background (`#090d16`), cyber blue accents (`#3b82f6`), emerald security green (`#10b981`), and dark surfaces.
+- **Light Mode**: Crisp canvas (`#f8fafc`), cobalt blue accents (`#2563eb`), dark slate text (`#0f172a`), and high-contrast borders.
 
 ### How Theme Switching Works:
 1. On initial visit, checks `localStorage` for a saved preference (`nks_portfolio_theme_pref`).
@@ -223,13 +223,13 @@ The website implements an accessible dual-theme system:
 ## 11. Troubleshooting
 
 - **Issue**: Missing fonts or icons offline.
-  - **Solution**: Google Fonts and Material Symbols are linked in `public/index.html`. For completely air-gapped environments, font files can be bundled locally into `src/assets/`.
+  - **Solution**: Google Fonts and Material Symbols are linked in `public/index.html`. For air-gapped environments, font files can be bundled locally.
 - **Issue**: Port 3000 in use.
-  - **Solution**: CRA will automatically prompt to run on port 3001, or pass `PORT=3005 npm start`.
+  - **Solution**: CRA will automatically prompt to run on port 3001, or run `PORT=3005 npm start`.
 
 ---
 
 ## 12. License & Author
 
 - **Author**: Neelkumar K. Shah
-- **Contact**: neelkumarkshah@gmail.com | [LinkedIn](https://linkedin.com/in/neelkumarkshah)
+- **Contact**: [neelkumarkshah@gmail.com](mailto:neelkumarkshah@gmail.com) | [LinkedIn](https://linkedin.com/in/neelkumarkshah) | [IEEE Xplore](https://ieeexplore.ieee.org/search/searchresult.jsp?newsearch=true&queryText=Neelkumar%20K.%20Shah)
