@@ -1,0 +1,184 @@
+.section {
+	padding-top: var(--space-2xl);
+	padding-bottom: var(--space-2xl);
+	width: 100%;
+}
+
+.inner {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-inline: auto;
+	padding-inline: clamp(1rem, 3.5vw, 3rem) !important;
+}
+
+.card {
+	background: linear-gradient(135deg, var(--color-surface-2) 0%, var(--color-surface-1) 100%);
+	border: 0.0625rem solid var(--color-accent-blue-30);
+	border-radius: var(--radius-xl);
+	padding: clamp(1.25rem, 3vw, 2.5rem);
+	box-shadow: var(--shadow-lg), var(--glow-blue);
+	width: 100%;
+	position: relative;
+	overflow: hidden;
+}
+
+.card::before {
+	content: "";
+	position: absolute;
+	top: -50%;
+	right: -20%;
+	width: 25rem;
+	height: 25rem;
+	background: radial-gradient(circle, var(--color-accent-blue-10) 0%, transparent 70%);
+	pointer-events: none;
+	filter: blur(3rem);
+}
+
+.row {
+	align-items: center;
+	row-gap: var(--space-xl);
+	width: 100%;
+	position: relative;
+	z-index: 1;
+}
+
+.contentCol {
+	display: flex;
+	flex-direction: column;
+	gap: 0.75rem;
+}
+
+.badgeRow {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	color: var(--color-secondary);
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+	font-weight: 600;
+}
+
+.dot {
+	width: 0.5rem;
+	height: 0.5rem;
+	border-radius: 50%;
+	background-color: var(--color-secondary);
+	box-shadow: 0 0 0.5rem var(--color-secondary);
+	animation: pulseGlow 2.5s infinite ease-in-out;
+}
+
+@keyframes pulseGlow {
+	0%, 100% { opacity: 1; transform: scale(1); }
+	50% { opacity: 0.6; transform: scale(0.85); }
+}
+
+.title {
+	font-family: var(--font-heading);
+	font-size: clamp(1.5rem, 2.2vw, 2rem);
+	font-weight: 700;
+	color: var(--color-text);
+	margin: 0;
+	line-height: 1.25;
+}
+
+.description {
+	font-size: var(--fs-body-sm);
+	line-height: var(--lh-body-sm);
+	color: var(--color-text-muted);
+	max-width: 44rem;
+	margin: 0;
+}
+
+.metaList {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem 1.5rem;
+	margin-top: 0.5rem;
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	color: var(--color-text-faint);
+}
+
+.metaItem {
+	display: flex;
+	align-items: center;
+	gap: 0.375rem;
+	background: var(--color-surface-terminal);
+	padding: 0.25rem 0.625rem;
+	border-radius: var(--radius-xs);
+	border: 0.0625rem solid var(--color-border-hairline);
+}
+
+.metaItem .material-symbols-outlined {
+	font-size: 1rem;
+	color: var(--color-accent-blue);
+}
+
+.actionsCol {
+	display: flex;
+	flex-direction: column;
+	gap: 0.875rem;
+	justify-content: center;
+}
+
+/* Modernized MAANG-level Action Buttons */
+.downloadBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.625rem;
+	background: var(--color-accent-blue);
+	color: var(--color-on-accent);
+	font-family: var(--font-sans);
+	font-weight: 700;
+	font-size: var(--fs-body-sm);
+	padding: 0.875rem 1.5rem;
+	border-radius: var(--radius-md);
+	border: 0.0625rem solid var(--color-accent-blue);
+	cursor: pointer;
+	text-decoration: none;
+	transition: all var(--transition-fast);
+	box-shadow: 0 0.25rem 1rem rgba(59, 130, 246, 0.35);
+	width: 100%;
+}
+
+.downloadBtn:hover {
+	background: var(--color-accent-blue-hover);
+	border-color: var(--color-accent-blue-hover);
+	transform: translateY(-0.125rem);
+	box-shadow: 0 0.375rem 1.5rem rgba(59, 130, 246, 0.5);
+	color: var(--color-on-accent);
+}
+
+.previewBtn {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 0.625rem;
+	background: var(--color-surface-terminal);
+	color: var(--color-text);
+	font-family: var(--font-sans);
+	font-weight: 600;
+	font-size: var(--fs-body-sm);
+	padding: 0.875rem 1.5rem;
+	border-radius: var(--radius-md);
+	border: 0.0625rem solid var(--color-border-strong);
+	cursor: pointer;
+	text-decoration: none;
+	transition: all var(--transition-fast);
+	width: 100%;
+}
+
+.previewBtn:hover {
+	border-color: var(--color-accent-blue);
+	color: var(--color-accent-blue);
+	background: var(--color-accent-blue-10);
+	transform: translateY(-0.125rem);
+}
+
+.btnIcon {
+	font-size: 1.25rem;
+	line-height: 1;
+}

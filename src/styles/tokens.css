@@ -1,0 +1,226 @@
+/*
+  tokens.css
+  -----------------------------------------------------------------------------
+  Single source of truth for design tokens across dark and light themes.
+  - Typography: strictly in rem units.
+  - Sizing & Layout: fluid percentage containers combined with structured rem spacing tokens.
+  - Theme colors: dark & light palettes with WCAG AAA contrast and glassmorphism.
+*/
+
+:root {
+	/* ---------------------------------------------------------------------
+     TYPOGRAPHY — Font families
+  --------------------------------------------------------------------- */
+	--font-heading: "Space Grotesk", -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-sans: "Inter", -apple-system, BlinkMacSystemFont, sans-serif;
+	--font-mono: "JetBrains Mono", "Fira Code", monospace;
+
+	/* ---------------------------------------------------------------------
+     TYPOGRAPHY — Type scale (strictly in rem)
+  --------------------------------------------------------------------- */
+	--fs-display: clamp(2.5rem, 5vw, 3.5rem);
+	--lh-display: clamp(3rem, 5.5vw, 4rem);
+	--fs-display-lg: clamp(3rem, 6vw, 4.5rem);
+	--lh-display-lg: clamp(3.5rem, 6.5vw, 5rem);
+	--ls-display: -0.03em;
+
+	--fs-headline-xl: clamp(2rem, 3.8vw, 2.75rem);
+	--lh-headline-xl: clamp(2.5rem, 4.2vw, 3.25rem);
+
+	--fs-headline-lg: clamp(1.5rem, 2.8vw, 2.25rem);
+	--lh-headline-lg: clamp(2rem, 3.2vw, 2.75rem);
+	--ls-headline-lg: -0.02em;
+
+	--fs-headline-md: clamp(1.25rem, 2.2vw, 1.75rem);
+	--lh-headline-md: clamp(1.75rem, 2.6vw, 2.25rem);
+
+	--fs-headline-sm: clamp(1.125rem, 1.6vw, 1.25rem);
+	--lh-headline-sm: 1.75rem;
+	--ls-headline-sm: -0.01em;
+
+	--fs-body-lg: 1.125rem;     /* 18px */
+	--lh-body-lg: 1.75rem;      /* 28px */
+
+	--fs-body-md: 1rem;         /* 16px */
+	--lh-body-md: 1.625rem;     /* 26px */
+
+	--fs-body-sm: 0.875rem;     /* 14px */
+	--lh-body-sm: 1.375rem;     /* 22px */
+
+	--fs-label-mono: 0.75rem;   /* 12px */
+	--lh-label-mono: 1rem;      /* 16px */
+	--ls-label-mono: 0.05em;
+
+	--fs-label-xs: 0.6875rem;   /* 11px */
+	--lh-label-xs: 0.875rem;    /* 14px */
+
+	/* ---------------------------------------------------------------------
+     SPACING & LAYOUT
+  --------------------------------------------------------------------- */
+	--space-2xs: 0.25rem;       /* 4px */
+	--space-xs: 0.5rem;         /* 8px */
+	--space-sm: 0.75rem;        /* 12px */
+	--space-md: 1rem;           /* 16px */
+	--space-lg: 1.5rem;         /* 24px */
+	--space-xl: 2rem;           /* 32px */
+	--space-2xl: 3rem;          /* 48px */
+	--space-3xl: 4.5rem;        /* 72px */
+	--space-section: clamp(3.5rem, 6vw, 6rem);
+	--container-max-width: min(94%, 90rem);
+
+	/* ---------------------------------------------------------------------
+     RADIUS
+  --------------------------------------------------------------------- */
+	--radius-xs: 0.25rem;
+	--radius-sm: 0.375rem;
+	--radius-md: 0.625rem;
+	--radius-lg: 0.875rem;
+	--radius-xl: 1.25rem;
+	--radius-full: 9999px;
+
+	/* ---------------------------------------------------------------------
+     TRANSITIONS & MOTION
+  --------------------------------------------------------------------- */
+	--transition-fast: 0.15s cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-normal: 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+	--transition-slow: 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+	--nav-height: 3.875rem;
+	--nav-floating-top: clamp(0.375rem, 1.2vw, 0.875rem);
+	--hero-min-height: clamp(70vh, 85vh, 95vh);
+
+	/* ---------------------------------------------------------------------
+     DARK THEME (Default)
+  --------------------------------------------------------------------- */
+	--color-canvas: #090d16;
+	--color-canvas-rgb: 9, 13, 22;
+	--color-surface-1: #0f1523;
+	--color-surface-1-rgb: 15, 21, 35;
+	--color-surface-2: #141c2e;
+	--color-surface-2-rgb: 20, 28, 46;
+	--color-surface-3: #1b263b;
+	--color-surface-terminal: #070a10;
+	--color-surface-modal: #101726;
+	--btn-close-filter: invert(1) grayscale(100%) brightness(200%);
+
+	/* Glass Navbar Tokens (Dark) */
+	--color-navbar-glass: rgba(10, 15, 29, 0.45);
+	--color-navbar-glass-scrolled: rgba(10, 15, 29, 0.75);
+	--color-border-glass: rgba(255, 255, 255, 0.14);
+
+	--color-border-subtle: #192338;
+	--color-border-hairline: #22304d;
+	--color-border-strong: #33476f;
+
+	--color-text: #f1f5f9;
+	--color-text-muted: #94a3b8;
+	--color-text-faint: #64748b;
+	--color-text-inverse: #090d16;
+
+	/* Tri-Domain Brand Accents */
+	--color-accent-blue: #3b82f6;       /* Blockchain & Interactive Primary */
+	--color-accent-blue-hover: #60a5fa;
+	--color-primary: #93c5fd;
+	--color-secondary: #10b981;        /* Cybersecurity & Verification Green */
+	--color-secondary-hover: #34d399;
+	--color-tertiary: #f59e0b;         /* Research & Architecture Amber */
+	--color-mern-cyan: #06b6d4;        /* MERN Stack Cyan */
+	--color-mern-node: #22c55e;        /* Node.js Green */
+	--color-mern-react: #38bdf8;       /* React Sky Blue */
+	--color-mern-mongo: #10b981;       /* Mongo Green */
+	--color-error: #ef4444;            /* Security Threat / Alert Red */
+	--color-on-accent: #ffffff;
+
+	/* Precomputed Alpha Variants */
+	--color-accent-blue-10: rgba(59, 130, 246, 0.1);
+	--color-accent-blue-20: rgba(59, 130, 246, 0.2);
+	--color-accent-blue-30: rgba(59, 130, 246, 0.3);
+	--color-secondary-10: rgba(16, 185, 129, 0.1);
+	--color-secondary-20: rgba(16, 185, 129, 0.2);
+	--color-secondary-30: rgba(16, 185, 129, 0.3);
+	--color-tertiary-10: rgba(245, 158, 11, 0.1);
+	--color-tertiary-20: rgba(245, 158, 11, 0.2);
+	--color-error-10: rgba(239, 68, 68, 0.1);
+
+	/* Shadows & Glows */
+	--shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.3);
+	--shadow-md: 0 0.25rem 0.75rem rgba(0, 0, 0, 0.4);
+	--shadow-lg: 0 0.625rem 1.5rem rgba(0, 0, 0, 0.5);
+	--glow-blue: 0 0 1.25rem rgba(59, 130, 246, 0.25);
+	--glow-green: 0 0 1.25rem rgba(16, 185, 129, 0.25);
+	--glow-cyan: 0 0 1.25rem rgba(6, 182, 212, 0.25);
+
+	/* Grid and Scanline Overlay */
+	--grid-pattern-color: rgba(59, 130, 246, 0.04);
+	--scanline-color: rgba(255, 255, 255, 0.015);
+	--network-line-color: rgba(59, 130, 246, 0.25);
+	--network-spoke-color: rgba(255, 255, 255, 0.08);
+}
+
+/* ---------------------------------------------------------------------
+   LIGHT THEME (High Contrast & Clean Surfaces)
+--------------------------------------------------------------------- */
+[data-theme="light"] {
+	--color-canvas: #f8fafc;
+	--color-canvas-rgb: 248, 250, 252;
+	--color-surface-1: #f1f5f9;
+	--color-surface-1-rgb: 241, 245, 249;
+	--color-surface-2: #ffffff;
+	--color-surface-2-rgb: 255, 255, 255;
+	--color-surface-3: #e2e8f0;
+	--color-surface-terminal: #f1f5f9;
+	--color-surface-modal: #ffffff;
+	--btn-close-filter: none;
+
+	/* Glass Navbar Tokens (Light) */
+	--color-navbar-glass: rgba(255, 255, 255, 0.50);
+	--color-navbar-glass-scrolled: rgba(255, 255, 255, 0.85);
+	--color-border-glass: rgba(15, 23, 42, 0.10);
+
+	--color-border-subtle: #e2e8f0;
+	--color-border-hairline: #cbd5e1;
+	--color-border-strong: #94a3b8;
+
+	--color-text: #0f172a;
+	--color-text-muted: #334155;
+	--color-text-faint: #64748b;
+	--color-text-inverse: #ffffff;
+
+	/* Tri-Domain Brand Accents (Light - WCAG AAA Contrast) */
+	--color-accent-blue: #1d4ed8;
+	--color-accent-blue-hover: #1e40af;
+	--color-primary: #1d4ed8;
+	--color-secondary: #047857;
+	--color-secondary-hover: #065f46;
+	--color-tertiary: #b45309;
+	--color-mern-cyan: #0e7490;
+	--color-mern-node: #15803d;
+	--color-mern-react: #0369a1;
+	--color-mern-mongo: #047857;
+	--color-error: #b91c1c;
+	--color-on-accent: #ffffff;
+
+	/* Precomputed Alpha Variants */
+	--color-accent-blue-10: rgba(29, 78, 216, 0.08);
+	--color-accent-blue-20: rgba(29, 78, 216, 0.15);
+	--color-accent-blue-30: rgba(29, 78, 216, 0.25);
+	--color-secondary-10: rgba(4, 120, 87, 0.08);
+	--color-secondary-20: rgba(4, 120, 87, 0.15);
+	--color-secondary-30: rgba(4, 120, 87, 0.25);
+	--color-tertiary-10: rgba(180, 83, 9, 0.08);
+	--color-tertiary-20: rgba(180, 83, 9, 0.15);
+	--color-error-10: rgba(185, 28, 28, 0.08);
+
+	/* Shadows & Glows */
+	--shadow-sm: 0 0.0625rem 0.25rem rgba(15, 23, 42, 0.06);
+	--shadow-md: 0 0.25rem 0.75rem rgba(15, 23, 42, 0.08);
+	--shadow-lg: 0 0.625rem 1.5rem rgba(15, 23, 42, 0.12);
+	--glow-blue: 0 0 1rem rgba(29, 78, 216, 0.15);
+	--glow-green: 0 0 1rem rgba(4, 120, 87, 0.15);
+	--glow-cyan: 0 0 1rem rgba(14, 116, 144, 0.15);
+
+	/* Grid and Scanline Overlay */
+	--grid-pattern-color: rgba(29, 78, 216, 0.04);
+	--scanline-color: rgba(0, 0, 0, 0.01);
+	--network-line-color: rgba(29, 78, 216, 0.2);
+	--network-spoke-color: rgba(15, 23, 42, 0.1);
+}

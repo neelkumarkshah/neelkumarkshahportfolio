@@ -1,0 +1,134 @@
+.section {
+	padding-top: var(--space-section);
+	padding-bottom: var(--space-section);
+	position: relative;
+	width: 100%;
+}
+
+.inner {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-inline: auto;
+	padding-inline: clamp(1rem, 3.5vw, 3rem) !important;
+}
+
+.headingBlock {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-lg);
+	margin-bottom: var(--space-2xl);
+	width: 100%;
+}
+
+@media (min-width: 48rem) {
+	.headingBlock {
+		flex-direction: row;
+		justify-content: space-between;
+		align-items: flex-end;
+	}
+}
+
+.filterRow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	margin-bottom: var(--space-md);
+}
+
+.row {
+	row-gap: var(--space-xl);
+	width: 100%;
+}
+
+.col {
+	display: flex;
+}
+
+.card {
+	width: 100%;
+	height: 100%;
+	display: flex;
+	flex-direction: column;
+	background: var(--color-surface-2);
+	border: 0.0625rem solid var(--color-border-hairline);
+	border-radius: var(--radius-lg);
+	padding: clamp(1rem, 3vw, 2rem);
+	transition: border-color var(--transition-normal), box-shadow var(--transition-normal), transform var(--transition-normal);
+}
+
+.card:hover {
+	border-color: var(--color-accent-blue-30);
+	transform: translateY(-0.125rem);
+	box-shadow: var(--shadow-md);
+}
+
+.header {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.875rem;
+	width: 100%;
+	min-height: 4.75rem;
+	padding-bottom: var(--space-md);
+	border-bottom: 0.0625rem solid var(--color-border-subtle);
+	margin-bottom: var(--space-lg);
+}
+
+.icon {
+	font-size: 1.75rem;
+	padding: 0.5rem;
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-1);
+	flex-shrink: 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	line-height: 1;
+}
+
+.accent {
+	color: var(--color-accent-blue);
+	border: 0.0625rem solid var(--color-accent-blue-30);
+}
+
+.secondary {
+	color: var(--color-secondary);
+	border: 0.0625rem solid var(--color-secondary-30);
+}
+
+.tertiary {
+	color: var(--color-tertiary);
+	border: 0.0625rem solid var(--color-tertiary-20);
+}
+
+.headerText {
+	display: flex;
+	flex-direction: column;
+	justify-content: center;
+	flex: 1;
+}
+
+.title {
+	font-family: var(--font-heading);
+	font-size: var(--fs-body-lg);
+	font-weight: 700;
+	color: var(--color-text);
+	margin-bottom: 0.25rem;
+	line-height: 1.25;
+}
+
+.subtitle {
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	color: var(--color-text-faint);
+	margin: 0;
+	line-height: 1.35;
+}
+
+.tags {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	width: 100%;
+	align-content: flex-start;
+	flex-grow: 1;
+}

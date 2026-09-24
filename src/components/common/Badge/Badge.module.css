@@ -1,0 +1,58 @@
+.badge {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	gap: 0.375rem;
+	border-radius: var(--radius-full);
+	border: 0.0625rem solid;
+	padding: 0.1875rem 0.625rem;
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	line-height: 1;
+	letter-spacing: var(--ls-label-mono);
+	text-transform: uppercase;
+	white-space: nowrap;
+}
+
+.dot {
+	width: 0.375rem;
+	height: 0.375rem;
+	border-radius: 50%;
+	background-color: currentColor;
+	flex-shrink: 0;
+}
+
+.icon {
+	font-size: 0.875rem;
+	line-height: 1;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	vertical-align: middle;
+	flex-shrink: 0;
+}
+
+.toneAccent {
+	color: var(--color-accent-blue);
+	border-color: var(--color-accent-blue-30);
+	background-color: var(--color-accent-blue-10);
+}
+
+.toneSecondary {
+	color: var(--color-secondary);
+	border-color: var(--color-secondary-30);
+	background-color: var(--color-secondary-10);
+}
+
+.toneTertiary {
+	color: var(--color-tertiary);
+	border-color: var(--color-tertiary-20);
+	background-color: var(--color-tertiary-10);
+}
+
+.toneCyan {
+	color: var(--color-mern-cyan);
+	border-color: var(--color-mern-cyan);
+	background-color: rgba(6, 182, 212, 0.1);
+}

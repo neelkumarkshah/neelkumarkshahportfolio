@@ -1,0 +1,72 @@
+.section {
+	padding-top: var(--space-section);
+	padding-bottom: var(--space-section);
+	position: relative;
+	width: 100%;
+}
+
+.inner {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-inline: auto;
+	padding-inline: clamp(1rem, 3.5vw, 3rem) !important;
+}
+
+.headerRow {
+	row-gap: var(--space-xl);
+	margin-bottom: clamp(2rem, 4vw, 4.5rem);
+	width: 100%;
+}
+
+.copyCol {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}
+
+.paragraph {
+	font-size: var(--fs-body-md);
+	line-height: var(--lh-body-md);
+	color: var(--color-text-muted);
+	margin: 0;
+}
+
+.calloutCard {
+	margin-top: var(--space-sm);
+	background: var(--color-surface-2);
+	border-color: var(--color-secondary-30);
+}
+
+.calloutWrapper {
+	display: flex;
+	align-items: flex-start;
+	gap: var(--space-md);
+	flex-wrap: wrap;
+}
+
+@media (min-width: 30rem) {
+	.calloutWrapper {
+		flex-wrap: nowrap;
+	}
+}
+
+.calloutTitle {
+	font-family: var(--font-heading);
+	font-size: var(--fs-headline-sm);
+	color: var(--color-text);
+	margin-bottom: 0.25rem;
+}
+
+.calloutBody {
+	font-size: var(--fs-body-sm);
+	line-height: var(--lh-body-sm);
+	color: var(--color-text-muted);
+	margin: 0;
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+}
+
+.calloutBody p {
+	margin: 0;
+}

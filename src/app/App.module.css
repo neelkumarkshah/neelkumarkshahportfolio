@@ -1,0 +1,24 @@
+.sectionFallback {
+	min-height: 25vh;
+	width: 100%;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background-color: var(--color-canvas);
+	padding: 5% 0;
+}
+
+.fallbackSpinner {
+	width: 2.25rem;
+	height: 2.25rem;
+	border: 0.1875rem solid var(--color-border-hairline);
+	border-top-color: var(--color-accent-blue);
+	border-radius: 50%;
+	animation: spin 0.8s linear infinite;
+}
+
+@keyframes spin {
+	to {
+		transform: rotate(360deg);
+	}
+}

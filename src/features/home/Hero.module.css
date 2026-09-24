@@ -1,0 +1,113 @@
+.hero {
+	min-height: var(--hero-min-height);
+	width: 100%;
+	padding-top: calc(var(--nav-height) + var(--nav-floating-top) + clamp(0.75rem, 2vw, 2rem));
+	padding-bottom: clamp(2rem, 4vw, 3rem);
+	display: flex;
+	align-items: center;
+	position: relative;
+}
+
+.ambientGlow {
+	position: absolute;
+	top: 15%;
+	left: 30%;
+	width: 25rem;
+	height: 25rem;
+	background: radial-gradient(circle, var(--color-accent-blue-20) 0%, transparent 70%);
+	pointer-events: none;
+	filter: blur(3rem);
+	z-index: -1;
+}
+
+.inner {
+	width: 100%;
+	max-width: var(--container-max-width);
+	margin-inline: auto;
+	padding-inline: clamp(1rem, 3.5vw, 3rem) !important;
+}
+
+.row {
+	align-items: center;
+	row-gap: clamp(1.5rem, 3vw, 3rem);
+	width: 100%;
+}
+
+.textCol {
+	display: flex;
+	flex-direction: column;
+	gap: var(--space-md);
+	z-index: 1;
+}
+
+.badgeRow {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem;
+	align-items: center;
+}
+
+.blockMeta {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	color: var(--color-text-faint);
+}
+
+.blockNumber {
+	color: var(--color-secondary);
+	font-weight: 600;
+}
+
+.separator {
+	opacity: 0.5;
+}
+
+.genesisHash {
+	background: var(--color-surface-2);
+	padding: 0.125rem 0.375rem;
+	border-radius: var(--radius-xs);
+	border: 0.0625rem solid var(--color-border-hairline);
+	color: var(--color-accent-blue);
+}
+
+.name {
+	font-family: var(--font-heading);
+	font-size: clamp(2.5rem, 5vw, 4.5rem);
+	line-height: 1.1;
+	font-weight: 700;
+	color: var(--color-text);
+	letter-spacing: -0.03em;
+}
+
+.roleTitle {
+	font-family: var(--font-mono);
+	font-size: clamp(1rem, 2vw, 1.25rem);
+	color: var(--color-accent-blue);
+	font-weight: 500;
+}
+
+.tagline {
+	font-size: var(--fs-body-md);
+	line-height: var(--lh-body-md);
+	color: var(--color-text-muted);
+	max-width: 36rem;
+}
+
+.actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	align-items: center;
+	margin-top: var(--space-sm);
+}
+
+.visualCol {
+	position: relative;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	width: 100%;
+}

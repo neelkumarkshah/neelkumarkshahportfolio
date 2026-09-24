@@ -1,0 +1,235 @@
+.container {
+	position: relative;
+	width: 100%;
+	height: 24rem;
+	background-color: var(--color-surface-1);
+	border: 0.0625rem solid var(--color-border-hairline);
+	border-radius: var(--radius-lg);
+	overflow: hidden;
+	box-shadow: var(--shadow-md);
+}
+
+.canvas {
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+
+.overlayLayer {
+	position: absolute;
+	inset: 0;
+	pointer-events: none;
+}
+
+.nodeButton {
+	position: absolute;
+	pointer-events: auto;
+	background: var(--color-surface-2);
+	border: 0.0625rem solid var(--color-border-hairline);
+	border-radius: var(--radius-sm);
+	padding: 0.375rem 0.625rem;
+	cursor: pointer;
+	text-align: center;
+	transition: all var(--transition-fast);
+	transform: translate(-50%, -50%);
+	box-shadow: var(--shadow-sm);
+	z-index: 5;
+}
+
+.nodeButton:hover {
+	transform: translate(-50%, -55%);
+	box-shadow: var(--shadow-md);
+}
+
+.node_blockchain {
+	top: 22%;
+	left: 50%;
+	border-color: var(--color-accent-blue-30);
+}
+.node_blockchain:hover,
+.node_blockchain.nodeActive {
+	border-color: var(--color-accent-blue);
+	box-shadow: var(--glow-blue);
+}
+
+.node_security {
+	top: 75%;
+	left: 22%;
+	border-color: var(--color-secondary-30);
+}
+.node_security:hover,
+.node_security.nodeActive {
+	border-color: var(--color-secondary);
+	box-shadow: var(--glow-green);
+}
+
+.node_mern {
+	top: 75%;
+	left: 78%;
+	border-color: var(--color-mern-cyan);
+}
+.node_mern:hover,
+.node_mern.nodeActive {
+	border-color: var(--color-mern-cyan);
+	box-shadow: var(--glow-cyan);
+}
+
+.nodeLabel {
+	font-family: var(--font-heading);
+	font-weight: 700;
+	font-size: var(--fs-label-mono);
+	color: var(--color-text);
+	white-space: nowrap;
+}
+
+.nodeHash {
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	color: var(--color-text-faint);
+}
+
+.detailCard {
+	position: absolute;
+	bottom: 3.5rem;
+	left: 50%;
+	transform: translateX(-50%);
+	width: calc(100% - 2rem);
+	max-width: 26rem;
+	background: var(--color-surface-modal);
+	border: 0.0625rem solid var(--color-border-strong);
+	border-radius: var(--radius-md);
+	padding: var(--space-md);
+	box-shadow: var(--shadow-lg);
+	pointer-events: auto;
+	z-index: 10;
+	animation: slideUp 0.25s ease-out;
+}
+
+@keyframes slideUp {
+	from {
+		opacity: 0;
+		transform: translate(-50%, 0.5rem);
+	}
+	to {
+		opacity: 1;
+		transform: translate(-50%, 0);
+	}
+}
+
+.detailHeader {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	margin-bottom: 0.375rem;
+}
+
+.detailBadge {
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	text-transform: uppercase;
+	padding: 0.125rem 0.375rem;
+	border: 0.0625rem solid;
+	border-radius: var(--radius-xs);
+}
+
+.closeBtn {
+	background: transparent;
+	border: none;
+	color: var(--color-text-muted);
+	font-size: 1.25rem;
+	line-height: 1;
+	cursor: pointer;
+	padding: 0.125rem 0.375rem;
+}
+
+.closeBtn:hover {
+	color: var(--color-text);
+}
+
+.detailTitle {
+	font-family: var(--font-heading);
+	font-size: var(--fs-body-sm);
+	font-weight: 700;
+	color: var(--color-text);
+	margin-bottom: 0.25rem;
+}
+
+.detailTech {
+	font-size: var(--fs-label-mono);
+	color: var(--color-text-muted);
+	line-height: 1.4;
+}
+
+.metaFooter {
+	position: absolute;
+	bottom: 0;
+	left: 0;
+	right: 0;
+	background: var(--color-surface-1);
+	border-top: 0.0625rem solid var(--color-border-hairline);
+	padding: 0.375rem 0.75rem;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+}
+
+.statusLive {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.375rem;
+	color: var(--color-secondary);
+	font-weight: 600;
+}
+
+.pulseDot {
+	width: 0.375rem;
+	height: 0.375rem;
+	border-radius: 50%;
+	background-color: var(--color-secondary);
+	box-shadow: 0 0 0.375rem var(--color-secondary);
+	animation: pulse 2s infinite;
+}
+
+@keyframes pulse {
+	0%, 100% { opacity: 1; }
+	50% { opacity: 0.4; }
+}
+
+.hint {
+	color: var(--color-text-faint);
+	display: none;
+}
+
+@media (max-width: 32rem) {
+	.container {
+		height: 20rem;
+	}
+	.nodeButton {
+		padding: 0.25rem 0.4375rem;
+	}
+	.nodeLabel {
+		font-size: 0.6875rem;
+	}
+	.nodeHash {
+		display: none;
+	}
+	.detailCard {
+		width: calc(100% - 1rem);
+		bottom: 2.75rem;
+		padding: 0.625rem;
+	}
+	.detailTitle {
+		font-size: 0.8125rem;
+	}
+}
+
+@media (min-width: 48rem) {
+	.container {
+		height: 28rem;
+	}
+	.hint {
+		display: inline;
+	}
+}
