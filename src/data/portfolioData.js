@@ -152,7 +152,6 @@ const skillGroups = [
 			"Consensus Algorithms",
 			"IPFS",
 			"MSP & CA Config",
-			"Peer Orchestration",
 		],
 	},
 	{
