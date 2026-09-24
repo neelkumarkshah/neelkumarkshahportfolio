@@ -1,5 +1,11 @@
+.modalRoot {
+	z-index: 1060 !important;
+}
+
 .modalDialog {
-	z-index: 1050;
+	margin: 0.75rem auto !important;
+	max-width: min(94vw, 75rem) !important;
+	width: 94vw !important;
 }
 
 .modalContent {
@@ -8,19 +14,24 @@
 	border-radius: var(--radius-lg) !important;
 	color: var(--color-text) !important;
 	box-shadow: var(--shadow-lg) !important;
-	max-height: 94vh;
-	display: flex;
-	flex-direction: column;
+	height: calc(100dvh - 2rem);
+	max-height: 52rem;
+	display: flex !important;
+	flex-direction: column !important;
+	overflow: hidden !important;
 	backdrop-filter: blur(1rem);
+	-webkit-backdrop-filter: blur(1rem);
 }
 
 .modalHeader {
+	flex-shrink: 0 !important;
 	border-bottom: 0.0625rem solid var(--color-border-hairline) !important;
-	padding: var(--space-md) var(--space-lg) !important;
+	padding: var(--space-sm) var(--space-lg) !important;
 	display: flex !important;
 	align-items: center !important;
 	justify-content: space-between !important;
-	gap: var(--space-md);
+	gap: var(--space-sm);
+	min-height: 3.5rem;
 }
 
 .headerInfo {
@@ -28,21 +39,26 @@
 	align-items: center;
 	gap: 0.75rem;
 	flex: 1;
+	min-width: 0;
 }
 
 .headerTop {
 	display: flex;
 	align-items: center;
-	gap: 0.625rem;
+	gap: 0.5rem;
 	flex-wrap: wrap;
+	min-width: 0;
 }
 
 .title {
 	font-family: var(--font-heading);
-	font-size: var(--fs-headline-sm);
+	font-size: var(--fs-title-lg);
 	font-weight: 700;
 	color: var(--color-text);
 	margin: 0;
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .docBadge {
@@ -53,6 +69,10 @@
 	border: 0.0625rem solid var(--color-border-hairline);
 	border-radius: var(--radius-xs);
 	color: var(--color-accent-blue);
+	white-space: nowrap;
+	max-width: 14rem;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .closeBtn {
@@ -85,18 +105,21 @@
 }
 
 .modalBody {
-	overflow: hidden;
-	padding: var(--space-md) !important;
-	display: flex;
-	flex-direction: column;
-	height: 75vh;
-	min-height: 32rem;
+	flex: 1 1 auto !important;
+	min-height: 0 !important;
+	height: 100% !important;
+	overflow: hidden !important;
+	padding: var(--space-sm) !important;
+	display: flex !important;
+	flex-direction: column !important;
 }
 
 /* PDF Embed Container */
 .pdfContainer {
 	width: 100%;
 	height: 100%;
+	flex: 1 1 auto;
+	min-height: 0;
 	display: flex;
 	flex-direction: column;
 	border-radius: var(--radius-md);
@@ -108,52 +131,67 @@
 .pdfObject {
 	width: 100%;
 	height: 100%;
+	flex: 1 1 auto;
+	min-height: 0;
 	border: none;
 	display: block;
 }
 
 .pdfFallback {
 	height: 100%;
+	width: 100%;
 	display: flex;
 	flex-direction: column;
 	align-items: center;
 	justify-content: center;
-	padding: var(--space-2xl);
+	padding: var(--space-md);
 	text-align: center;
 	background: var(--color-surface-2);
 	color: var(--color-text);
-	gap: var(--space-md);
+	gap: var(--space-sm);
+	overflow-y: auto;
 }
 
 .fallbackIcon {
-	font-size: 3.5rem;
+	font-size: 3rem;
 	color: var(--color-accent-blue);
+}
+
+.fallbackTitle {
+	font-family: var(--font-heading);
+	font-size: 1.125rem;
+	font-weight: 700;
+	color: var(--color-text);
+	margin: 0;
+}
+
+.fallbackText {
+	font-family: var(--font-sans);
+	font-size: 0.8125rem;
+	color: var(--color-text-muted);
+	margin: 0;
+	max-width: 20rem;
 }
 
 .fallbackActions {
 	display: flex;
-	gap: var(--space-md);
+	gap: var(--space-sm);
 	flex-wrap: wrap;
 	justify-content: center;
-	margin-top: var(--space-sm);
+	margin-top: var(--space-xs);
 }
 
 /* Footer styling */
 .modalFooter {
+	flex-shrink: 0 !important;
 	border-top: 0.0625rem solid var(--color-border-hairline) !important;
-	padding: var(--space-md) var(--space-lg) !important;
-	display: flex;
-	flex-direction: column;
+	padding: var(--space-sm) var(--space-lg) !important;
+	display: flex !important;
+	flex-direction: row !important;
+	justify-content: space-between !important;
+	align-items: center !important;
 	gap: var(--space-sm);
-	align-items: stretch;
-}
-
-@media (min-width: 40rem) {
-	.modalFooter {
-		flex-direction: row;
-		justify-content: space-between;
-		align-items: center;
-	}
+	min-height: 3.5rem;
 }
 
 .footerInfo {
@@ -163,20 +201,26 @@
 	font-family: var(--font-mono);
 	font-size: var(--fs-label-xs);
 	color: var(--color-secondary);
+	white-space: nowrap;
+	overflow: hidden;
+	text-overflow: ellipsis;
 }
 
 .footerActions {
 	display: flex;
 	gap: 0.5rem;
+	align-items: center;
 	justify-content: flex-end;
-	flex-wrap: wrap;
+	flex-shrink: 0;
 }
 
+.actionBtn,
 .printBtn {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.375rem;
-	padding: 0.5rem 0.875rem;
+	padding: 0.4375rem 0.875rem;
 	font-family: var(--font-sans);
 	font-size: var(--fs-label-mono);
 	font-weight: 600;
@@ -186,8 +230,10 @@
 	border: 0.0625rem solid var(--color-border-hairline);
 	cursor: pointer;
 	transition: all var(--transition-fast);
+	white-space: nowrap;
 }
 
+.actionBtn:hover,
 .printBtn:hover {
 	background: var(--color-accent-blue-10);
 	border-color: var(--color-accent-blue);
@@ -195,11 +241,17 @@
 	transform: translateY(-0.0625rem);
 }
 
+.actionBtn .material-symbols-outlined,
+.printBtn .material-symbols-outlined {
+	font-size: 1.125rem;
+}
+
 .modalDownloadBtn {
 	display: inline-flex;
 	align-items: center;
+	justify-content: center;
 	gap: 0.375rem;
-	padding: 0.5rem 1rem;
+	padding: 0.4375rem 1rem;
 	font-family: var(--font-sans);
 	font-size: var(--fs-label-mono);
 	font-weight: 600;
@@ -210,6 +262,7 @@
 	cursor: pointer;
 	transition: all var(--transition-fast);
 	box-shadow: var(--shadow-sm);
+	white-space: nowrap;
 }
 
 .modalDownloadBtn:hover {
@@ -217,4 +270,88 @@
 	border-color: var(--color-accent-blue-hover);
 	box-shadow: var(--glow-blue);
 	transform: translateY(-0.0625rem);
+}
+
+.modalDownloadBtn .material-symbols-outlined {
+	font-size: 1.125rem;
+}
+
+.btnLabelDesktop {
+	display: inline;
+}
+
+.btnLabelMobile {
+	display: none;
+}
+
+/* Responsive Styles for Mobile & Small Tablets */
+@media (max-width: 48rem) {
+	.modalDialog {
+		margin: 0.5rem auto !important;
+		width: calc(100vw - 1rem) !important;
+		max-width: 100% !important;
+	}
+
+	.modalContent {
+		height: calc(100dvh - 1rem) !important;
+		max-height: calc(100dvh - 1rem) !important;
+		border-radius: var(--radius-md) !important;
+	}
+
+	.modalHeader {
+		padding: 0.5rem 0.75rem !important;
+		min-height: 3rem;
+	}
+
+	.title {
+		font-size: 1rem;
+	}
+
+	.docBadge {
+		display: none;
+	}
+
+	.modalBody {
+		padding: 0.375rem !important;
+	}
+
+	.modalFooter {
+		padding: 0.5rem 0.75rem !important;
+		min-height: 3.25rem;
+		gap: 0.375rem;
+	}
+
+	.footerInfo {
+		display: none;
+	}
+
+	.footerActions {
+		width: 100%;
+		display: grid;
+		grid-template-columns: repeat(3, 1fr);
+		gap: 0.375rem;
+	}
+
+	.actionBtn,
+	.printBtn,
+	.modalDownloadBtn {
+		padding: 0.4375rem 0.25rem;
+		font-size: 0.75rem;
+		width: 100%;
+		gap: 0.25rem;
+	}
+
+	.actionBtn .material-symbols-outlined,
+	.printBtn .material-symbols-outlined,
+	.modalDownloadBtn .material-symbols-outlined {
+		font-size: 1rem;
+	}
+
+	.btnLabelDesktop {
+		display: none;
+	}
+
+	.btnLabelMobile {
+		display: inline;
+	}
 }

@@ -18,12 +18,12 @@ const NavBar = ({ onOpenCvModal }) => {
 	const closeMenu = useCallback(() => setExpanded(false), []);
 
 	const handleDownloadCv = useCallback(async () => {
+		closeMenu();
 		if (onOpenCvModal) {
 			onOpenCvModal();
 		} else {
 			await downloadResume();
 		}
-		closeMenu();
 	}, [onOpenCvModal, closeMenu]);
 
 	useEffect(() => {

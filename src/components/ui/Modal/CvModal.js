@@ -23,7 +23,8 @@ const CvModal = ({ show, onHide }) => {
 			onHide={onHide}
 			size="xl"
 			centered
-			className={styles.modalDialog}
+			className={styles.modalRoot}
+			dialogClassName={styles.modalDialog}
 			contentClassName={styles.modalContent}
 			aria-labelledby="cv-modal-title"
 		>
@@ -65,13 +66,13 @@ const CvModal = ({ show, onHide }) => {
 							<span className={`material-symbols-outlined ${styles.fallbackIcon}`} aria-hidden="true">
 								description
 							</span>
-							<h3>PDF Viewer Preview</h3>
-							<p>Your browser is unable to display the PDF directly in this frame.</p>
+							<h3 className={styles.fallbackTitle}>PDF Viewer Preview</h3>
+							<p className={styles.fallbackText}>Your browser is unable to display the PDF directly in this frame.</p>
 							<div className={styles.fallbackActions}>
 								<button
 									type="button"
 									onClick={handleOpenInNewTab}
-									className={styles.printBtn}
+									className={styles.actionBtn}
 								>
 									<span className="material-symbols-outlined" aria-hidden="true">
 										open_in_new
@@ -86,7 +87,7 @@ const CvModal = ({ show, onHide }) => {
 									<span className="material-symbols-outlined" aria-hidden="true">
 										download
 									</span>
-									<span>Download PDF Document</span>
+									<span>Download PDF</span>
 								</button>
 							</div>
 						</div>
@@ -105,22 +106,23 @@ const CvModal = ({ show, onHide }) => {
 					<button
 						type="button"
 						onClick={handleOpenInNewTab}
-						className={styles.printBtn}
+						className={styles.actionBtn}
 						aria-label="Open PDF in new tab"
 					>
-						<span className="material-symbols-outlined" style={{ fontSize: "1.125rem" }} aria-hidden="true">
+						<span className="material-symbols-outlined" aria-hidden="true">
 							open_in_new
 						</span>
-						<span>Open in New Tab</span>
+						<span className={styles.btnLabelDesktop}>Open in New Tab</span>
+						<span className={styles.btnLabelMobile}>Open</span>
 					</button>
 
 					<button
 						type="button"
 						onClick={handlePrint}
-						className={styles.printBtn}
+						className={styles.actionBtn}
 						aria-label="Print Curriculum Vitae"
 					>
-						<span className="material-symbols-outlined" style={{ fontSize: "1.125rem" }} aria-hidden="true">
+						<span className="material-symbols-outlined" aria-hidden="true">
 							print
 						</span>
 						<span>Print</span>
@@ -132,10 +134,11 @@ const CvModal = ({ show, onHide }) => {
 						className={styles.modalDownloadBtn}
 						aria-label="Download CV PDF"
 					>
-						<span className="material-symbols-outlined" style={{ fontSize: "1.125rem" }} aria-hidden="true">
+						<span className="material-symbols-outlined" aria-hidden="true">
 							download
 						</span>
-						<span>Download PDF</span>
+						<span className={styles.btnLabelDesktop}>Download PDF</span>
+						<span className={styles.btnLabelMobile}>Download</span>
 					</button>
 				</div>
 			</Modal.Footer>
