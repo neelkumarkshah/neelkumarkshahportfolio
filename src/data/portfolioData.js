@@ -5,7 +5,7 @@ const site = Object.freeze({
 	role: "Blockchain Engineer, Cybersecurity Researcher & Full Stack MERN Developer",
 	brand: "Neelkumar K. Shah",
 	tagline:
-		"An engineer with 5 years of experience across blockchain development, full-stack engineering, and cybersecurity. Built and hardened Hyperledger Fabric and Ethereum systems for India's National Blockchain Service initiative under the Ministry of Electronics and Information Technology (MeitY). Developed a full-stack security assessment platform (React, Node.js, Express.js, MongoDB) and an automated database vulnerability scanner. Authored 5 peer-reviewed IEEE publications on blockchain security.",
+		"Engineer with 5 years of experience in blockchain development, full-stack engineering, and cybersecurity. Built and hardened Hyperledger Fabric and Ethereum systems for India's National Blockchain Service initiative under the Ministry of Electronics and Information Technology (MeitY). Developed a full-stack security assessment platform (React, Node.js, Express.js, MongoDB) and an automated database vulnerability scanner. Authored 5 peer-reviewed IEEE publications on blockchain security.",
 	email: "neelkumarkshah@gmail.com",
 	phone: "(+91) 8866108533",
 	linkedin: "linkedin.com/in/neelkumarkshah",

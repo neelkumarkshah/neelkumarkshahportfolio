@@ -40,8 +40,7 @@ const CvModal = ({ show, onHide }) => {
 			centered
 			className={styles.modalDialog}
 			contentClassName={styles.modalContent}
-			aria-labelledby="cv-modal-title"
-		>
+			aria-labelledby="cv-modal-title">
 			<Modal.Header className={styles.modalHeader}>
 				<div className={styles.headerInfo}>
 					<div className={styles.headerTop}>
@@ -52,14 +51,16 @@ const CvModal = ({ show, onHide }) => {
 					</div>
 
 					{/* View Switcher Tabs */}
-					<div className={styles.tabGroup} role="tablist" aria-label="CV View Mode">
+					<div
+						className={styles.tabGroup}
+						role="tablist"
+						aria-label="CV View Mode">
 						<button
 							type="button"
 							role="tab"
 							aria-selected={viewMode === "pdf"}
 							onClick={() => setViewMode("pdf")}
-							className={`${styles.tabBtn} ${viewMode === "pdf" ? styles.tabBtnActive : ""}`}
-						>
+							className={`${styles.tabBtn} ${viewMode === "pdf" ? styles.tabBtnActive : ""}`}>
 							<span className="material-symbols-outlined" aria-hidden="true">
 								picture_as_pdf
 							</span>
@@ -70,8 +71,7 @@ const CvModal = ({ show, onHide }) => {
 							role="tab"
 							aria-selected={viewMode === "structured"}
 							onClick={() => setViewMode("structured")}
-							className={`${styles.tabBtn} ${viewMode === "structured" ? styles.tabBtnActive : ""}`}
-						>
+							className={`${styles.tabBtn} ${viewMode === "structured" ? styles.tabBtnActive : ""}`}>
 							<span className="material-symbols-outlined" aria-hidden="true">
 								article
 							</span>
@@ -85,8 +85,7 @@ const CvModal = ({ show, onHide }) => {
 					onClick={onHide}
 					className={styles.closeBtn}
 					aria-label="Close CV Preview"
-					title="Close"
-				>
+					title="Close">
 					<span className="material-symbols-outlined" aria-hidden="true">
 						close
 					</span>
@@ -94,28 +93,33 @@ const CvModal = ({ show, onHide }) => {
 			</Modal.Header>
 
 			<Modal.Body className={styles.modalBody}>
-				{viewMode === "pdf" ? (
+				{viewMode === "pdf" ?
 					/* PDF Embed Viewer */
 					<div className={styles.pdfContainer}>
 						<object
 							data={`${site.cvPath}#toolbar=1&navpanes=0`}
 							type="application/pdf"
 							className={styles.pdfObject}
-							title={`${site.name} Curriculum Vitae PDF`}
-						>
+							title={`${site.name} Curriculum Vitae PDF`}>
 							<div className={styles.pdfFallback}>
-								<span className={`material-symbols-outlined ${styles.fallbackIcon}`} aria-hidden="true">
+								<span
+									className={`material-symbols-outlined ${styles.fallbackIcon}`}
+									aria-hidden="true">
 									description
 								</span>
 								<h3>PDF Viewer Not Supported In This Browser View</h3>
-								<p>You can view the document directly in a new tab or download the file.</p>
+								<p>
+									You can view the document directly in a new tab or download
+									the file.
+								</p>
 								<div className={styles.fallbackActions}>
 									<button
 										type="button"
 										onClick={handleOpenInNewTab}
-										className={styles.printBtn}
-									>
-										<span className="material-symbols-outlined" aria-hidden="true">
+										className={styles.printBtn}>
+										<span
+											className="material-symbols-outlined"
+											aria-hidden="true">
 											open_in_new
 										</span>
 										<span>Open PDF in New Tab</span>
@@ -123,9 +127,10 @@ const CvModal = ({ show, onHide }) => {
 									<button
 										type="button"
 										onClick={() => setViewMode("structured")}
-										className={styles.modalDownloadBtn}
-									>
-										<span className="material-symbols-outlined" aria-hidden="true">
+										className={styles.modalDownloadBtn}>
+										<span
+											className="material-symbols-outlined"
+											aria-hidden="true">
 											article
 										</span>
 										<span>Switch to Structured Digital View</span>
@@ -134,8 +139,7 @@ const CvModal = ({ show, onHide }) => {
 							</div>
 						</object>
 					</div>
-				) : (
-					/* Fully Formatted Structured Digital CV */
+				:	/* Fully Formatted Structured Digital CV */
 					<div className={styles.structuredCv}>
 						{/* Resume Header */}
 						<div className={styles.resumeHeader}>
@@ -143,23 +147,44 @@ const CvModal = ({ show, onHide }) => {
 							<div className={styles.candidateRole}>{site.role}</div>
 							<div className={styles.contactMeta}>
 								<span>
-									<span className="material-symbols-outlined" aria-hidden="true">email</span>
+									<span
+										className="material-symbols-outlined"
+										aria-hidden="true">
+										email
+									</span>
 									<a href={`mailto:${site.email}`}>{site.email}</a>
 								</span>
 								<span>•</span>
 								<span>
-									<span className="material-symbols-outlined" aria-hidden="true">call</span>
-									<a href={`tel:${site.phone.replace(/[^0-9+]/g, "")}`}>{site.phone}</a>
+									<span
+										className="material-symbols-outlined"
+										aria-hidden="true">
+										call
+									</span>
+									<a href={`tel:${site.phone.replace(/[^0-9+]/g, "")}`}>
+										{site.phone}
+									</a>
 								</span>
 								<span>•</span>
 								<span>
-									<span className="material-symbols-outlined" aria-hidden="true">location_on</span>
+									<span
+										className="material-symbols-outlined"
+										aria-hidden="true">
+										location_on
+									</span>
 									{site.location}
 								</span>
 								<span>•</span>
 								<span>
-									<span className="material-symbols-outlined" aria-hidden="true">link</span>
-									<a href={site.linkedinUrl} target="_blank" rel="noopener noreferrer">
+									<span
+										className="material-symbols-outlined"
+										aria-hidden="true">
+										link
+									</span>
+									<a
+										href={site.linkedinUrl}
+										target="_blank"
+										rel="noopener noreferrer">
 										{site.linkedin}
 									</a>
 								</span>
@@ -174,12 +199,18 @@ const CvModal = ({ show, onHide }) => {
 
 						{/* Core Technical Skills */}
 						<div className={styles.sectionBlock}>
-							<h3 className={styles.sectionHeading}>CORE TECHNICAL COMPETENCIES</h3>
+							<h3 className={styles.sectionHeading}>
+								CORE TECHNICAL COMPETENCIES
+							</h3>
 							<div className={styles.skillList}>
 								{skillGroups.map((grp) => (
 									<div key={grp.id} className={styles.skillItem}>
-										<strong className={styles.skillCategoryTitle}>{grp.title}:</strong>{" "}
-										<span className={styles.skillTagsText}>{grp.tags.join(" • ")}</span>
+										<strong className={styles.skillCategoryTitle}>
+											{grp.title}:
+										</strong>{" "}
+										<span className={styles.skillTagsText}>
+											{grp.tags.join(" • ")}
+										</span>
 									</div>
 								))}
 							</div>
@@ -199,7 +230,9 @@ const CvModal = ({ show, onHide }) => {
 									</div>
 									{exp.location && (
 										<div className={styles.expLocation}>
-											<span className="material-symbols-outlined" aria-hidden="true">
+											<span
+												className="material-symbols-outlined"
+												aria-hidden="true">
 												location_on
 											</span>
 											<span>{exp.location}</span>
@@ -216,13 +249,17 @@ const CvModal = ({ show, onHide }) => {
 
 						{/* Key Projects & R&D Tools */}
 						<div className={styles.sectionBlock}>
-							<h3 className={styles.sectionHeading}>KEY PROJECTS & SECURITY TOOLS</h3>
+							<h3 className={styles.sectionHeading}>
+								KEY PROJECTS & SECURITY TOOLS
+							</h3>
 							<div className={styles.projectList}>
 								{projects.map((proj) => (
 									<div key={proj.id} className={styles.projectItem}>
 										<div className={styles.projectHeader}>
 											<span className={styles.projectTitle}>{proj.title}</span>
-											<span className={styles.projectRef}>[{proj.ref} • {proj.status}]</span>
+											<span className={styles.projectRef}>
+												[{proj.ref} • {proj.status}]
+											</span>
 										</div>
 										<p className={styles.projectDesc}>{proj.description}</p>
 										{proj.tags && (
@@ -246,7 +283,9 @@ const CvModal = ({ show, onHide }) => {
 																({sub.category} • {sub.status})
 															</span>
 														</div>
-														<p className={styles.submoduleDesc}>{sub.description}</p>
+														<p className={styles.submoduleDesc}>
+															{sub.description}
+														</p>
 														{sub.tags && (
 															<div className={styles.itemTags}>
 																{sub.tags.map((st) => (
@@ -268,7 +307,8 @@ const CvModal = ({ show, onHide }) => {
 						{/* Peer-Reviewed IEEE Publications */}
 						<div className={styles.sectionBlock}>
 							<h3 className={styles.sectionHeading}>
-								PEER-REVIEWED RESEARCH PUBLICATIONS ({publications.length} IEEE PAPERS)
+								PEER-REVIEWED RESEARCH PUBLICATIONS ({publications.length} IEEE
+								PAPERS)
 							</h3>
 							<div className={styles.pubList}>
 								{publications.map((pub, idx) => (
@@ -279,18 +319,19 @@ const CvModal = ({ show, onHide }) => {
 												href={pub.href}
 												target="_blank"
 												rel="noopener noreferrer"
-												className={styles.pubTitleLink}
-											>
+												className={styles.pubTitleLink}>
 												<strong>&quot;{pub.title}&quot;</strong>
-												<span className="material-symbols-outlined" aria-hidden="true">
+												<span
+													className="material-symbols-outlined"
+													aria-hidden="true">
 													open_in_new
 												</span>
 											</a>
 										</div>
 										<div className={styles.pubVenue}>
 											{pub.venue} • <strong>Published:</strong> {pub.date} •{" "}
-											<strong>IEEE Doc ID:</strong> {pub.documentId} • <strong>DOI:</strong>{" "}
-											{pub.doi}
+											<strong>IEEE Doc ID:</strong> {pub.documentId} •{" "}
+											<strong>DOI:</strong> {pub.doi}
 										</div>
 									</div>
 								))}
@@ -323,11 +364,15 @@ const CvModal = ({ show, onHide }) => {
 
 						{/* Certifications & Honors */}
 						<div className={styles.sectionBlock}>
-							<h3 className={styles.sectionHeading}>PROFESSIONAL CERTIFICATIONS & HONORS</h3>
+							<h3 className={styles.sectionHeading}>
+								PROFESSIONAL CERTIFICATIONS & HONORS
+							</h3>
 							<div className={styles.certList}>
 								{certifications.map((cert) => (
 									<div key={cert.id} className={styles.certItem}>
-										<span className="material-symbols-outlined" aria-hidden="true">
+										<span
+											className="material-symbols-outlined"
+											aria-hidden="true">
 											verified
 										</span>
 										<div>
@@ -339,7 +384,7 @@ const CvModal = ({ show, onHide }) => {
 							</div>
 						</div>
 					</div>
-				)}
+				}
 			</Modal.Body>
 
 			<Modal.Footer className={styles.modalFooter}>
@@ -354,9 +399,11 @@ const CvModal = ({ show, onHide }) => {
 						type="button"
 						onClick={handleOpenInNewTab}
 						className={styles.printBtn}
-						aria-label="Open PDF in new tab"
-					>
-						<span className="material-symbols-outlined" style={{ fontSize: "1.125rem" }} aria-hidden="true">
+						aria-label="Open PDF in new tab">
+						<span
+							className="material-symbols-outlined"
+							style={{ fontSize: "1.125rem" }}
+							aria-hidden="true">
 							open_in_new
 						</span>
 						<span>Open in Tab</span>
@@ -366,9 +413,11 @@ const CvModal = ({ show, onHide }) => {
 						type="button"
 						onClick={handlePrint}
 						className={styles.printBtn}
-						aria-label="Print Curriculum Vitae"
-					>
-						<span className="material-symbols-outlined" style={{ fontSize: "1.125rem" }} aria-hidden="true">
+						aria-label="Print Curriculum Vitae">
+						<span
+							className="material-symbols-outlined"
+							style={{ fontSize: "1.125rem" }}
+							aria-hidden="true">
 							print
 						</span>
 						<span>Print</span>
@@ -378,9 +427,11 @@ const CvModal = ({ show, onHide }) => {
 						type="button"
 						onClick={handleDownload}
 						className={styles.modalDownloadBtn}
-						aria-label="Download CV PDF"
-					>
-						<span className="material-symbols-outlined" style={{ fontSize: "1.125rem" }} aria-hidden="true">
+						aria-label="Download CV PDF">
+						<span
+							className="material-symbols-outlined"
+							style={{ fontSize: "1.125rem" }}
+							aria-hidden="true">
 							download
 						</span>
 						<span>Download PDF CV</span>
