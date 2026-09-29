@@ -79,9 +79,31 @@ const about = {
 
 const experience = [
 	{
+		id: "freelance-consultant",
+		seed: "freelance-fullstack-security-engineer",
+		latest: true,
+		badge: {
+			icon: "terminal",
+			label: "Self-Employed/Freelance",
+			tone: "accent",
+		},
+		period: "Aug 2026 - Present",
+		role: "Independent Full-Stack Developer, Blockchain Engineer & Cybersecurity Consultant",
+		org: "Self-Employed · Freelance",
+		location: "Remote/India",
+		bullets: [
+			"Architected and developed Sudarshana, a full-stack web application security auditing platform built with Node.js, React.js, Express.js, and MongoDB (MERN stack) to automate security assessments for web applications and REST APIs.",
+			"Engineered an automated Node.js security scanner that analyzes web applications and APIs for HTTP security headers including Content-Security-Policy (CSP), Strict-Transport-Security (HSTS), X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, Cross-Origin-Resource-Policy (CORP), Cross-Origin-Opener-Policy (COOP), Cross-Origin-Embedder-Policy (COEP), X-XSS-Protection, and CORS misconfiguration detection.",
+			"Implemented automated PDF audit report generation with modern design standards, delivering structured, professional-grade security posture reports for each scanned web application and API endpoint.",
+			"Designed robust RESTful API endpoints, secure authentication workflows, and interactive React.js frontend dashboards for real-time audit reporting, vulnerability tracking, and remediation management.",
+			"Developed Solidity smart contracts for Ethereum-based decentralized applications and performed source code security analysis of Solidity smart contracts and Node.js chaincode to identify vulnerabilities, logic flaws, and compliance gaps.",
+			"Delivered end-to-end full-stack development, vulnerability assessment and penetration testing (VAPT), and security code remediation consulting for client web applications and APIs.",
+		],
+	},
+	{
 		id: "rru-2026",
 		seed: "rru-2026-asst-prof",
-		latest: true,
+		latest: false,
 		badge: {
 			icon: "school",
 			label: "Rashtriya Raksha University",
@@ -253,6 +275,30 @@ const projects = [
 		],
 	},
 	{
+		id: "sudarshana-security-scanner",
+		ref: "SUDARSHANA-SEC",
+		status: "SECURITY AUDIT TOOL",
+		icon: "shield",
+		title: "Sudarshana - Web & API Security Scanner",
+		category: "Full-Stack MERN & Automated Security Auditing",
+		description:
+			"A full-stack web application security auditing platform built with Node.js, React.js, Express.js, and MongoDB (MERN stack). Features an automated Node.js scanning engine that analyzes web applications and REST APIs for HTTP security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, CORP, COOP, COEP, X-XSS-Protection, and CORS misconfigurations). Generates professional-grade PDF audit reports with modern design standards. Includes Solidity smart contract development and source code security analysis of Solidity smart contracts and Node.js chaincode.",
+		tags: [
+			"#NodeJS",
+			"#React",
+			"#Express",
+			"#MongoDB",
+			"#SecurityAudit",
+			"#API_Security",
+			"#HeaderScanner",
+			"#PDF_Reports",
+			"#Solidity",
+			"#SmartContracts",
+			"#SourceCodeAnalysis",
+			"#VAPT",
+		],
+	},
+	{
 		id: "ewaste-dapp",
 		ref: "GTU-DISSERTATION",
 		status: "M.E. DISSERTATION",
@@ -406,9 +452,9 @@ const terminalCommands = {
 	skills:
 		"Blockchain: Hyperledger (Fabric, Sawtooth), Ethereum (Solidity, Truffle, Ganache) | Dev: Python, Node.js, Express.js, NestJS,  React, MongoDB | Security: VAPT, Smart Contract Audits, NBFDBAudit",
 	experience:
-		"RRU (Assistant Professor, Jun-Aug 2026) <- C-DAC Pune (Project Engineer MeitY, Oct 2021-Jun 2026) <- Huptech Web (Jr. UI Developer, Jun-Sep 2019)",
+		"Self-Employed / Freelance (Full-Stack Developer, Blockchain Engineer & Cybersecurity Consultant, Aug 2026-Present) <- RRU (Assistant Professor, Jun-Aug 2026) <- C-DAC Pune (Project Engineer MeitY, Oct 2021-Jun 2026) <- Huptech Web (Jr. UI Developer, Jun-Sep 2019)",
 	projects:
-		"1. National Blockchain Framework (NBF) [Includes: NBFDBAudit Tool (Python DB Vuln Scanner) & BSAP Portal (MERN Security Platform)] | 2. E-Waste Lifecycle Management DApp (Ethereum, Solidity, IPFS, React)",
+		"1. Sudarshana (MERN Security Auditing Platform: HTTP Header Scanner, PDF Audit Reports, Solidity Smart Contracts, Source Code Analysis) | 2. National Blockchain Framework (NBF) [Includes: NBFDBAudit Tool & BSAP Portal] | 3. E-Waste Lifecycle Management DApp (Ethereum, Solidity, IPFS, React)",
 	publications:
 		"5 IEEE publications on Blockchain Security: ICBDS 2025, ICBDS 2024 (SAFE-Block), ICBDS 2023 (NoSQL Sec), I2CT 2023, I2CT 2022 (SC-SIF)",
 	education:
