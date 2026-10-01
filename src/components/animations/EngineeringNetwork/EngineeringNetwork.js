@@ -28,7 +28,7 @@ const NODES = [
 	},
 	{
 		id: "mern",
-		label: "FULL STACK MERN",
+		label: "FULL STACK",
 		category: "Scalable Architecture",
 		tech: "Node.js, Express.js, NestJS, React.js, MongoDB, REST APIs, Microservices",
 		hash: "0x19AF…38D7",

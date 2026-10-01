@@ -8,7 +8,6 @@ import { SECTION_IDS } from "constants/routes";
 import styles from "./Hero.module.css";
 
 const Hero = () => {
-
 	return (
 		<section
 			className={styles.hero}

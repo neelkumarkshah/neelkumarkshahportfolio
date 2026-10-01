@@ -2,7 +2,7 @@ import { SECTION_IDS, anchorHref } from "constants/routes";
 
 const site = Object.freeze({
 	name: "Neelkumar K. Shah",
-	role: "Blockchain Engineer, Cybersecurity Researcher & Full Stack MERN Developer",
+	role: "Blockchain Engineer, Cybersecurity Researcher & Full Stack Developer",
 	brand: "Neelkumar K. Shah",
 	tagline:
 		"Engineer with 5 years of experience in blockchain development, full-stack engineering, and cybersecurity. Built and hardened Hyperledger Fabric and Ethereum systems for India's National Blockchain Service initiative under the Ministry of Electronics and Information Technology (MeitY). Developed a full-stack security assessment platform (React, Node.js, Express.js, MongoDB) and an automated database vulnerability scanner. Authored 5 peer-reviewed IEEE publications on blockchain security.",
@@ -197,7 +197,7 @@ const skillGroups = [
 		id: "full-stack-dev",
 		icon: "terminal",
 		iconTone: "tertiary",
-		title: "Full-Stack MERN & Dev",
+		title: "Full-Stack",
 		subtitle: "Scalable APIs & enterprise web systems",
 		tags: [
 			"React.js",
@@ -280,7 +280,7 @@ const projects = [
 		status: "SECURITY AUDIT TOOL",
 		icon: "shield",
 		title: "Sudarshana - Web & API Security Scanner",
-		category: "Full-Stack MERN & Automated Security Auditing",
+		category: "Full-Stack & Automated Security Auditing",
 		description:
 			"A full-stack web application security auditing platform built with Node.js, React.js, Express.js, and MongoDB (MERN stack). Features an automated Node.js scanning engine that analyzes web applications and REST APIs for HTTP security headers (CSP, HSTS, X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, CORP, COOP, COEP, X-XSS-Protection, and CORS misconfigurations). Generates professional-grade PDF audit reports with modern design standards. Includes Solidity smart contract development and source code security analysis of Solidity smart contracts and Node.js chaincode.",
 		tags: [
