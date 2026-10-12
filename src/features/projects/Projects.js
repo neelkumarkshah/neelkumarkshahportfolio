@@ -69,7 +69,26 @@ const ProjectCard = ({ project }) => {
 			</span>
 
 			<div className={styles.topRow}>
-				<Tag>REF: {project.ref}</Tag>
+				<div className={styles.refGroup}>
+					<Tag>REF: {project.ref}</Tag>
+					{project.url && (
+						<a
+							href={project.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className={styles.liveSiteLink}
+							aria-label={`Visit live site for ${project.title}`}
+							title={`Visit ${project.url}`}>
+							<span
+								className="material-symbols-outlined"
+								style={{ fontSize: "0.875rem" }}
+								aria-hidden="true">
+								open_in_new
+							</span>
+							<span>Live Site</span>
+						</a>
+					)}
+				</div>
 				<Badge tone={hasSubmodules ? "accent" : "secondary"} dot>
 					{project.status}
 				</Badge>
@@ -119,6 +138,7 @@ ProjectCard.propTypes = {
 		category: PropTypes.string.isRequired,
 		ref: PropTypes.string.isRequired,
 		status: PropTypes.string.isRequired,
+		url: PropTypes.string,
 		description: PropTypes.string.isRequired,
 		tags: PropTypes.arrayOf(PropTypes.string),
 		tech: PropTypes.arrayOf(PropTypes.string),

@@ -84,14 +84,22 @@ const experience = [
 		latest: true,
 		badge: {
 			icon: "terminal",
-			label: "Self-Employed/Freelance",
+			label: "Self-Employed / Freelance",
 			tone: "accent",
 		},
 		period: "Jun 2026 - Present",
 		role: "Independent Full-Stack Developer, Blockchain Engineer & Cybersecurity Consultant",
 		org: "Self-Employed · Freelance",
-		location: "Remote/India",
+		location: "Remote / India",
+		links: [
+			{
+				label: "Live Site: tbgind.com",
+				url: "https://tbgind.com",
+				icon: "flight_takeoff",
+			},
+		],
 		bullets: [
+			"Architected and delivered the full-fledged, production-grade corporate air travel web platform for Travel Beyond ([tbgind.com](https://tbgind.com)) — an executive air travel management company with dual operational hubs in Dubai and Mumbai. Engineered a high-performance responsive UI, hardened the platform with strict Content Security Policy (CSP), Subresource Integrity (SRI sha384 hashing), and integrated structured schema.org JSON-LD for global SEO.",
 			"Architected and developed Sudarshana, a full-stack web application security auditing platform built with Node.js, React.js, Express.js, and MongoDB (MERN stack) to automate security assessments for web applications and REST APIs.",
 			"Engineered an automated Node.js security scanner that analyzes web applications and APIs for HTTP security headers including Content-Security-Policy (CSP), Strict-Transport-Security (HSTS), X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, Cross-Origin-Resource-Policy (CORP), Cross-Origin-Opener-Policy (COOP), Cross-Origin-Embedder-Policy (COEP), X-XSS-Protection, and CORS misconfiguration detection.",
 			"Implemented automated PDF audit report generation with modern design standards, delivering structured, professional-grade security posture reports for each scanned web application and API endpoint.",
@@ -112,7 +120,7 @@ const experience = [
 	// 	period: "Jun 2026 - Aug 2026",
 	// 	role: "Assistant Professor",
 	// 	org: "School of Applied Sciences, Engineering and Technology - Rashtriya Raksha University",
-	// 	location: "Veraval, Gujarat, India",
+	// 	location: "Gandhinagar, Gujarat, India",
 	// 	bullets: [
 	// 		"Delivered a full-day training on blockchain and cryptocurrency fundamentals to 20 NCB officers and technical staff from across India.",
 	// 		"Authored Board of Studies (BoS) documentation establishing the curriculum for a new PG Diploma in Blockchain Technology program.",
@@ -299,6 +307,27 @@ const projects = [
 		],
 	},
 	{
+		id: "travel-beyond",
+		ref: "TBG-AIR",
+		status: "PRODUCTION / CLIENT",
+		icon: "flight_takeoff",
+		title: "Travel Beyond — Executive Corporate Air Travel Platform",
+		category: "Full-Stack Web Application & Production Engineering",
+		url: "https://tbgind.com",
+		description:
+			"Engineered and delivered the full-fledged, production-grade corporate air travel web platform for Travel Beyond (tbgind.com), serving CXOs and global enterprises across Dubai and Mumbai. Built with modern React.js architecture, hardened with Content Security Policy (CSP) and Subresource Integrity (SRI sha384 hashing), and integrated structured schema.org JSON-LD for global SEO.",
+		tags: [
+			"#React",
+			"#JavaScript",
+			"#FullStack",
+			"#CorporateAirTravel",
+			"#CSP_Security",
+			"#SRI_Hashing",
+			"#SEO_Optimization",
+			"#ProductionDeployment",
+		],
+	},
+	{
 		id: "ewaste-dapp",
 		ref: "GTU-DISSERTATION",
 		status: "M.E. DISSERTATION",
@@ -452,9 +481,9 @@ const terminalCommands = {
 	skills:
 		"Blockchain: Hyperledger (Fabric, Sawtooth), Ethereum (Solidity, Truffle, Ganache) | Dev: Python, Node.js, Express.js, NestJS,  React, MongoDB | Security: VAPT, Smart Contract Audits, NBFDBAudit",
 	experience:
-		"Self-Employed / Freelance (Full-Stack Developer, Blockchain Engineer & Cybersecurity Consultant, Aug 2026-Present) <- RRU (Assistant Professor, Jun-Aug 2026) <- C-DAC Pune (Project Engineer MeitY, Oct 2021-Jun 2026) <- Huptech Web (Jr. UI Developer, Jun-Sep 2019)",
+		"Self-Employed / Freelance (Full-Stack Developer, Blockchain Engineer & Cybersecurity Consultant, Jun 2026-Present) <- RRU (Assistant Professor, Jun-Aug 2026) <- C-DAC Pune (Project Engineer MeitY, Oct 2021-Jun 2026) <- Huptech Web (Jr. UI Developer, Jun-Sep 2019)",
 	projects:
-		"1. Sudarshana (MERN Security Auditing Platform: HTTP Header Scanner, PDF Audit Reports, Solidity Smart Contracts, Source Code Analysis) | 2. National Blockchain Framework (NBF) [Includes: NBFDBAudit Tool & BSAP Portal] | 3. E-Waste Lifecycle Management DApp (Ethereum, Solidity, IPFS, React)",
+		"1. Travel Beyond (Executive Corporate Air Travel Web Platform - tbgind.com) | 2. Sudarshana (MERN Security Auditing Platform: HTTP Header Scanner, PDF Audit Reports, Solidity Smart Contracts, Source Code Analysis) | 3. National Blockchain Framework (NBF) [Includes: NBFDBAudit Tool & BSAP Portal] | 4. E-Waste Lifecycle Management DApp (Ethereum, Solidity, IPFS, React)",
 	publications:
 		"5 IEEE publications on Blockchain Security: ICBDS 2025, ICBDS 2024 (SAFE-Block), ICBDS 2023 (NoSQL Sec), I2CT 2023, I2CT 2022 (SC-SIF)",
 	education:

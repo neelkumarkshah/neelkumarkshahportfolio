@@ -65,6 +65,38 @@
 	justify-content: space-between;
 	align-items: center;
 	margin-bottom: var(--space-md);
+	flex-wrap: wrap;
+	gap: 0.5rem;
+}
+
+.refGroup {
+	display: flex;
+	align-items: center;
+	gap: 0.5rem;
+	flex-wrap: wrap;
+}
+
+.liveSiteLink {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.25rem;
+	font-family: var(--font-mono);
+	font-size: var(--fs-label-xs);
+	color: var(--color-accent-blue);
+	text-decoration: none;
+	padding: 0.25rem 0.5rem;
+	border-radius: var(--radius-sm);
+	background: var(--color-surface-terminal);
+	border: 0.0625rem solid var(--color-border-hairline);
+	font-weight: 500;
+	transition: all var(--transition-fast);
+}
+
+.liveSiteLink:hover {
+	border-color: var(--color-accent-blue);
+	color: var(--color-secondary);
+	background: var(--color-surface-1);
+	transform: translateY(-0.0625rem);
 }
 
 .categoryBadge {

@@ -6,6 +6,50 @@ import { useHashChain } from "hooks/useHashChain";
 import { SECTION_IDS } from "constants/routes";
 import styles from "./Experience.module.css";
 
+const renderBullet = (bullet) => {
+	if (typeof bullet !== "string") return bullet;
+
+	const linkPattern = /\[([^\]]+)\]\((https?:\/\/[^\s)]+)\)/g;
+	if (!linkPattern.test(bullet)) {
+		return bullet;
+	}
+
+	linkPattern.lastIndex = 0;
+	const elements = [];
+	let lastIndex = 0;
+	let match;
+
+	while ((match = linkPattern.exec(bullet)) !== null) {
+		if (match.index > lastIndex) {
+			elements.push(bullet.substring(lastIndex, match.index));
+		}
+		elements.push(
+			<a
+				key={match.index}
+				href={match[2]}
+				target="_blank"
+				rel="noopener noreferrer"
+				className={styles.bulletLink}
+			>
+				<span>{match[1]}</span>
+				<span
+					className={`material-symbols-outlined ${styles.bulletLinkIcon}`}
+					aria-hidden="true"
+				>
+					open_in_new
+				</span>
+			</a>
+		);
+		lastIndex = linkPattern.lastIndex;
+	}
+
+	if (lastIndex < bullet.length) {
+		elements.push(bullet.substring(lastIndex));
+	}
+
+	return elements;
+};
+
 const ExperienceBlock = ({ entry, chain }) => (
 	<div className={`${styles.node} ${entry.latest ? styles.nodeLatest : ""}`}>
 		<span className={styles.dot} aria-hidden="true" />
@@ -26,9 +70,38 @@ const ExperienceBlock = ({ entry, chain }) => (
 				)}
 			</div>
 
+			{Array.isArray(entry.links) && entry.links.length > 0 && (
+				<div className={styles.linksRow}>
+					{entry.links.map((link) => (
+						<a
+							key={link.url}
+							href={link.url}
+							target="_blank"
+							rel="noopener noreferrer"
+							className={styles.entryLink}
+							aria-label={`Visit ${link.label}`}
+						>
+							<span
+								className={`material-symbols-outlined ${styles.entryLinkIcon}`}
+								aria-hidden="true"
+							>
+								{link.icon || "language"}
+							</span>
+							<span>{link.label}</span>
+							<span
+								className={`material-symbols-outlined ${styles.entryLinkExternal}`}
+								aria-hidden="true"
+							>
+								open_in_new
+							</span>
+						</a>
+					))}
+				</div>
+			)}
+
 			<ul className={styles.bullets}>
 				{entry.bullets.map((bullet, index) => (
-					<li key={index}>{bullet}</li>
+					<li key={index}>{renderBullet(bullet)}</li>
 				))}
 			</ul>
 
@@ -59,6 +132,13 @@ ExperienceBlock.propTypes = {
 			icon: PropTypes.string,
 			label: PropTypes.string,
 		}),
+		links: PropTypes.arrayOf(
+			PropTypes.shape({
+				label: PropTypes.string.isRequired,
+				url: PropTypes.string.isRequired,
+				icon: PropTypes.string,
+			})
+		),
 		bullets: PropTypes.arrayOf(PropTypes.string).isRequired,
 	}).isRequired,
 	chain: PropTypes.shape({
