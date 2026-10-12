@@ -29,11 +29,12 @@ const renderBullet = (bullet) => {
 				href={match[2]}
 				target="_blank"
 				rel="noopener noreferrer"
-				className={styles.bulletLink}
+				className={styles.inlineLink}
+				title={`Visit ${match[1]}`}
 			>
 				<span>{match[1]}</span>
 				<span
-					className={`material-symbols-outlined ${styles.bulletLinkIcon}`}
+					className={`material-symbols-outlined ${styles.inlineLinkIcon}`}
 					aria-hidden="true"
 				>
 					open_in_new
@@ -70,40 +71,49 @@ const ExperienceBlock = ({ entry, chain }) => (
 				)}
 			</div>
 
+			<ul className={styles.bullets}>
+				{entry.bullets.map((bullet, index) => (
+					<li key={index}>{renderBullet(bullet)}</li>
+				))}
+			</ul>
+
 			{Array.isArray(entry.links) && entry.links.length > 0 && (
-				<div className={styles.linksRow}>
+				<div className={styles.deploymentsRow}>
+					<span className={styles.deploymentsLabel}>
+						<span
+							className={`material-symbols-outlined ${styles.deploymentsIcon}`}
+							aria-hidden="true"
+						>
+							verified
+						</span>
+						Live Production:
+					</span>
 					{entry.links.map((link) => (
 						<a
 							key={link.url}
 							href={link.url}
 							target="_blank"
 							rel="noopener noreferrer"
-							className={styles.entryLink}
-							aria-label={`Visit ${link.label}`}
+							className={styles.deployLinkPill}
+							aria-label={`Visit live deployment: ${link.label}`}
 						>
 							<span
-								className={`material-symbols-outlined ${styles.entryLinkIcon}`}
+								className={`material-symbols-outlined ${styles.pillLeadingIcon}`}
 								aria-hidden="true"
 							>
-								{link.icon || "language"}
+								{link.icon || "public"}
 							</span>
-							<span>{link.label}</span>
+							<span className={styles.pillText}>{link.label}</span>
 							<span
-								className={`material-symbols-outlined ${styles.entryLinkExternal}`}
+								className={`material-symbols-outlined ${styles.pillTrailingIcon}`}
 								aria-hidden="true"
 							>
-								open_in_new
+								arrow_outward
 							</span>
 						</a>
 					))}
 				</div>
 			)}
-
-			<ul className={styles.bullets}>
-				{entry.bullets.map((bullet, index) => (
-					<li key={index}>{renderBullet(bullet)}</li>
-				))}
-			</ul>
 
 			<div className={styles.hashPanel}>
 				<div className={styles.hashRow}>

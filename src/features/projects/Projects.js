@@ -69,8 +69,8 @@ const ProjectCard = ({ project }) => {
 			</span>
 
 			<div className={styles.topRow}>
-				<div className={styles.refGroup}>
-					<Tag>REF: {project.ref}</Tag>
+				<Tag>REF: {project.ref}</Tag>
+				<div className={styles.topRowRight}>
 					{project.url && (
 						<a
 							href={project.url}
@@ -79,19 +79,19 @@ const ProjectCard = ({ project }) => {
 							className={styles.liveSiteLink}
 							aria-label={`Visit live site for ${project.title}`}
 							title={`Visit ${project.url}`}>
+							<span className={styles.liveDot} aria-hidden="true" />
+							<span>Live Site</span>
 							<span
-								className="material-symbols-outlined"
-								style={{ fontSize: "0.875rem" }}
+								className={`material-symbols-outlined ${styles.liveIcon}`}
 								aria-hidden="true">
 								open_in_new
 							</span>
-							<span>Live Site</span>
 						</a>
 					)}
+					<Badge tone={hasSubmodules ? "accent" : "secondary"} dot>
+						{project.status}
+					</Badge>
 				</div>
-				<Badge tone={hasSubmodules ? "accent" : "secondary"} dot>
-					{project.status}
-				</Badge>
 			</div>
 
 			<div className={styles.categoryBadge}>{project.category}</div>
@@ -106,6 +106,31 @@ const ProjectCard = ({ project }) => {
 					<Tag key={item}>{item}</Tag>
 				))}
 			</div>
+
+			{project.url && (
+				<div className={styles.projectActionRow}>
+					<a
+						href={project.url}
+						target="_blank"
+						rel="noopener noreferrer"
+						className={styles.visitSiteBtn}
+						aria-label={`Explore live platform: ${project.title}`}>
+						<span
+							className="material-symbols-outlined"
+							style={{ fontSize: "1.125rem", color: "var(--color-secondary)" }}
+							aria-hidden="true">
+							flight_takeoff
+						</span>
+						<span>Explore Live Platform · tbgind.com</span>
+						<span
+							className="material-symbols-outlined"
+							style={{ fontSize: "1rem" }}
+							aria-hidden="true">
+							arrow_outward
+						</span>
+					</a>
+				</div>
+			)}
 
 			{hasSubmodules && (
 				<div className={styles.submodulesSection}>

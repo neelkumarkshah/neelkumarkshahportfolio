@@ -93,13 +93,13 @@ const experience = [
 		location: "Remote / India",
 		links: [
 			{
-				label: "Live Site: tbgind.com",
+				label: "Travel Beyond · tbgind.com",
 				url: "https://tbgind.com",
 				icon: "flight_takeoff",
 			},
 		],
 		bullets: [
-			"Architected and delivered the full-fledged, production-grade corporate air travel web platform for Travel Beyond ([tbgind.com](https://tbgind.com)) — an executive air travel management company with dual operational hubs in Dubai and Mumbai. Engineered a high-performance responsive UI, hardened the platform with strict Content Security Policy (CSP), Subresource Integrity (SRI sha384 hashing), and integrated structured schema.org JSON-LD for global SEO.",
+			"Architected and delivered the full-fledged, production-grade corporate air travel web platform for Travel Beyond [tbgind.com](https://tbgind.com) - an executive air travel management company with dual operational hubs in Dubai and Mumbai. Developed a high-performance responsive UI, hardened the platform with strict Content Security Policy (CSP), and integrated structured schema.org JSON-LD for global SEO.",
 			"Architected and developed Sudarshana, a full-stack web application security auditing platform built with Node.js, React.js, Express.js, and MongoDB (MERN stack) to automate security assessments for web applications and REST APIs.",
 			"Engineered an automated Node.js security scanner that analyzes web applications and APIs for HTTP security headers including Content-Security-Policy (CSP), Strict-Transport-Security (HSTS), X-Frame-Options, X-Content-Type-Options, Referrer-Policy, Permissions-Policy, Cross-Origin-Resource-Policy (CORP), Cross-Origin-Opener-Policy (COOP), Cross-Origin-Embedder-Policy (COEP), X-XSS-Protection, and CORS misconfiguration detection.",
 			"Implemented automated PDF audit report generation with modern design standards, delivering structured, professional-grade security posture reports for each scanned web application and API endpoint.",
