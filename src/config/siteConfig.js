@@ -1,17 +1,18 @@
 const siteConfig = Object.freeze({
 	title:
-		"Neelkumar K. Shah - Blockchain Engineer, Cybersecurity Researcher & Full Stack MERN Developer",
+		"Neelkumar K. Shah - Cybersecurity Engineer | Blockchain Engineer | Full-Stack Developer",
 	author: "Neelkumar K. Shah",
 	description:
-		"An engineer with 5 years of experience across blockchain development, full-stack engineering, and cybersecurity. Built and hardened Hyperledger Fabric and Ethereum systems for India's National Blockchain Service initiative under the Ministry of Electronics and Information Technology (MeitY). Developed a full-stack security assessment platform (React, Node.js, Express.js, MongoDB) and an automated database vulnerability scanner. Authored 5 peer-reviewed IEEE publications on blockchain security.",
+		"Engineer with 5 years of experience securing and building blockchain and web systems. Contributed in the MeitY-funded National Blockchain Framework (NBF) for India's National Blockchain Service, architecting a multi-organization Hyperledger Fabric network and leading vulnerability assessment and penetration testing (VAPT) across 4-5 blockchain applications and 30-45 APIs. Built full-stack security tooling with React, Node.js, Express.js, and MongoDB, including a security assessment platform and a Python database vulnerability scanner that detects 18+ vulnerability classes. Author of 5 peer-reviewed IEEE papers on blockchain and smart contract security.",
 	cvPath: "/assets/Neelkumar_K_Shah_CV.pdf",
 	cvFilename: "Neelkumar_K_Shah_CV.pdf",
 	contactEmail: "neelkumarkshah@gmail.com",
-	phone: "+91 8866108533",
+	phone: "(+91) 8866108533",
 	location: "Veraval, Gujarat, India",
 	linkedinUrl: "https://linkedin.com/in/neelkumarkshah",
+	portfolioUrl: "https://neelkumarkshahportfolio.vercel.app",
 	githubUrl: "https://github.com",
-	role: "Blockchain Engineer & Full Stack MERN Developer",
+	role: "Cybersecurity Engineer | Blockchain Engineer | Full-Stack Developer",
 });
 
 export { siteConfig };
